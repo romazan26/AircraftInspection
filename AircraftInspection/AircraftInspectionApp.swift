@@ -11,7 +11,7 @@ import SwiftUI
 struct AircraftInspectionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabViewBoot().preferredColorScheme(.dark)
         }
     }
 }
