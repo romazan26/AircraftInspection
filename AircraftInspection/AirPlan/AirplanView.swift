@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct AirplanView: View {
-    @ObservedObject var viewModel = AirplaneviewModel()
+    @ObservedObject var viewModel = AirplaneviewModel(planes: DataManager.shared.createTempData())
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 10) {
             
             VStack {
                 Text("Arplain").font(.title).bold()
@@ -18,6 +18,12 @@ struct AirplanView: View {
                 Image(.airplane)
                     .resizable()
                     .frame(width: 254, height: 94)
+                NavigationLink(destination: AddPlaneView(viewModel: viewModel), label: {
+                    ButtonCircle()
+                })
+                
+                    .foregroundStyle(.accent)
+               .offset(y: 100)
             }
             .foregroundStyle(.black)
             .padding(70)
@@ -25,18 +31,23 @@ struct AirplanView: View {
                 Color(.white)
                     .cornerRadius(10)
             }
-            ButtonCircle()
-           .offset(y: -37)
+            
+            
             Text("Your planes")
+                .padding(5)
+                .padding(.top, 20)
+                
             ScrollView {
-                ForEach(viewModel.planes, id: \.self.id ) { plane in
-                    Text(plane.name)
-                }
+                ForEach(viewModel.planes) { plane in
+                    AirplaneCellView(airplane: plane)
+                }.onAppear(perform: {
+                    print(viewModel.planes)
+                })
             }
         }
     }
 }
 
 #Preview {
-    AirplanView()
+    AirplanView(viewModel: AirplaneviewModel(planes: DataManager.shared.createTempData()))
 }

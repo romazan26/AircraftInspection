@@ -8,9 +8,33 @@
 import Foundation
 
 final class AirplaneviewModel: ObservableObject {
+    
     @Published var planes: [Plane]
     
-    init() {
-        self.planes = DataManager.shared.createTempData()
+    @Published var simpleName = ""
+    @Published var simpleModel = ""
+    @Published var simpleSerialNumber = ""
+    @Published var simpleLastInspection = ""
+    @Published var simpleUpcomingInspection = ""
+    
+    
+    init(planes: [Plane]) {
+        self.planes = planes
+    }
+    
+    func addPlane() {
+        var plane = Plane(name: simpleName,
+                          model: simpleModel,
+                          serialNumber: simpleSerialNumber,
+                          lastInspection: simpleLastInspection,
+                          upcominInspection: simpleUpcomingInspection)
+        
+        planes.append(plane)
+        
+        simpleName = ""
+        simpleModel = ""
+        simpleSerialNumber = ""
+        simpleLastInspection = ""
+        simpleUpcomingInspection = ""
     }
 }

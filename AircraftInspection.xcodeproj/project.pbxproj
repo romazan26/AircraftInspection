@@ -19,6 +19,9 @@
 		309F44412BB74F45008D3A29 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44402BB74F45008D3A29 /* DataManager.swift */; };
 		309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */; };
 		309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44452BB75881008D3A29 /* ButtonCircle.swift */; };
+		30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26162BBBD227002216E8 /* AirplaneCellView.swift */; };
+		30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26182BBBE182002216E8 /* AddPlaneView.swift */; };
+		30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		309F44402BB74F45008D3A29 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneviewModel.swift; sourceTree = "<group>"; };
 		309F44452BB75881008D3A29 /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
+		30FF26162BBBD227002216E8 /* AirplaneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneCellView.swift; sourceTree = "<group>"; };
+		30FF26182BBBE182002216E8 /* AddPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaneView.swift; sourceTree = "<group>"; };
+		30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 			children = (
 				309F44322BB74619008D3A29 /* AirplanView.swift */,
 				309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */,
+				30FF26182BBBE182002216E8 /* AddPlaneView.swift */,
 			);
 			path = AirPlan;
 			sourceTree = "<group>";
@@ -135,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				309F44452BB75881008D3A29 /* ButtonCircle.swift */,
+				30FF26162BBBD227002216E8 /* AirplaneCellView.swift */,
+				30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -214,10 +223,13 @@
 				309F44362BB7464C008D3A29 /* MonitoringView.swift in Sources */,
 				309F44332BB74619008D3A29 /* AirplanView.swift in Sources */,
 				309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */,
+				30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */,
 				309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */,
+				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
 				309F44262BB744DA008D3A29 /* TabViewBoot.swift in Sources */,
 				309F44242BB744DA008D3A29 /* AircraftInspectionApp.swift in Sources */,
+				30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */,
 				309F443F2BB74C43008D3A29 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

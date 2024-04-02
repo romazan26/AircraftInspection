@@ -17,8 +17,8 @@ final class DataManager {
         let plane = Plane(name: "Airbus A380",
                           model: "Qatar Airways",
                           serialNumber: "4578-662-E",
-                          lastInspection: Date.now,
-                          upcominInspection: Date.now)
+                          lastInspection: "23.02.24",
+                          upcominInspection: "23.03.24")
         planes.append(plane)
         
         return planes
