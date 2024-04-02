@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AirplanView: View {
-    @ObservedObject var viewModel = AirplaneviewModel(planes: DataManager.shared.createTempData())
+    @ObservedObject var viewModel = AirplaneviewModel()
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             
@@ -52,5 +52,5 @@ struct AirplanView: View {
 }
 
 #Preview {
-    AirplanView(viewModel: AirplaneviewModel(planes: DataManager.shared.createTempData()))
+    AirplanView(viewModel: AirplaneviewModel())
 }

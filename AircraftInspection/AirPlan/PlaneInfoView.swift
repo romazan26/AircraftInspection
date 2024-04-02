@@ -28,12 +28,19 @@ struct PlaneInfoView: View {
                 
             }
             Spacer()
+            
+            //MARK: - Plane Info
             Text("About the plane")
+                .onAppear(perform: {
+                    viewModel.choosPlane = plane
+                })
             TextPlaneView(placeHolder: "Model", text: plane.model)
             TextPlaneView(placeHolder: "Serial number", text: plane.serialNumber)
             TextPlaneView(placeHolder: "Last inspection", text: plane.lastInspection)
             TextPlaneView(placeHolder: "Upcoming inspection", text: plane.upcominInspection)
         }
+        
+        //MARK: - ALERT
         .alert(isPresented: $showAlert, content: {
             Alert(title: Text("Deletion"),
                   message: Text("Do you really want to delete it?"),
@@ -49,14 +56,13 @@ struct PlaneInfoView: View {
             ToolbarItem(placement: .automatic) {
                 HStack {
                     NavigationLink {
-                        AddPlaneView(viewModel: AirplaneviewModel(planes: [plane]), title: "Edit")
+                        AddPlaneView(viewModel: viewModel, title: "Edit")
                     } label: {
                         Image(systemName: "pencil")
                     }
                     
                     Button(action: {
                         showAlert = true
-                        
                     }, label: {
                         Image(systemName: "trash.fill")
                     })
@@ -67,5 +73,5 @@ struct PlaneInfoView: View {
 }
 
 #Preview {
-    PlaneInfoView(viewModel: AirplaneviewModel(planes: DataManager.shared.createTempData()), plane: DataManager.shared.createTempData()[0])
+    PlaneInfoView(viewModel: AirplaneviewModel(), plane: DataManager.shared.createTempData()[0])
 }

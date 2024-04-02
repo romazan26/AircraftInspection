@@ -13,6 +13,7 @@ struct AddPlaneView: View {
     
     var title = ""
     
+    
     var body: some View {
         VStack {
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simpleName)
@@ -40,10 +41,14 @@ struct AddPlaneView: View {
             .padding()
             
             .navigationTitle(title)
-        }
+        }.onAppear(perform: {
+            if title == "Edit" {
+                viewModel.fillChosePlane()
+            }
+        })
     }
 }
 
 #Preview {
-    AddPlaneView(viewModel: AirplaneviewModel(planes: DataManager.shared.createTempData()))
+    AddPlaneView(viewModel: AirplaneviewModel())
 }

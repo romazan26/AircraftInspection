@@ -9,18 +9,14 @@ import Foundation
 
 final class AirplaneviewModel: ObservableObject {
     
-    @Published var planes: [Plane]
+    @Published var planes: [Plane] = []
+    @Published var choosPlane: Plane!
     
     @Published var simpleName = ""
     @Published var simpleModel = ""
     @Published var simpleSerialNumber = ""
     @Published var simpleLastInspection = ""
     @Published var simpleUpcomingInspection = ""
-    
-    
-    init(planes: [Plane]) {
-        self.planes = planes
-    }
     
     func addPlane() {
         let plane = Plane(name: simpleName,
@@ -41,6 +37,20 @@ final class AirplaneviewModel: ObservableObject {
     func deletePlane(planeId: UUID) {
         planes.removeAll { plane in
             plane.id == planeId
+        }
+    }
+    
+    func fillChosePlane(){
+        simpleName = choosPlane.name
+        simpleModel = choosPlane.model
+        simpleSerialNumber = choosPlane.serialNumber
+        simpleLastInspection = choosPlane.lastInspection
+        simpleUpcomingInspection = choosPlane.upcominInspection
+    }
+    func replaceInfiPlane(){
+        for plane in planes {
+            if plane.id == choosPlane.id{
+            }
         }
     }
 }
