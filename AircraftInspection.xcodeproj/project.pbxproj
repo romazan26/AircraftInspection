@@ -24,6 +24,10 @@
 		30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */; };
 		30FF261D2BBBF454002216E8 /* PlaneInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261C2BBBF454002216E8 /* PlaneInfoView.swift */; };
 		30FF261F2BBBF640002216E8 /* TextPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261E2BBBF640002216E8 /* TextPlaneView.swift */; };
+		30FF26232BBC8A17002216E8 /* MonitorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26222BBC8A17002216E8 /* MonitorCellView.swift */; };
+		30FF26252BBC8D7E002216E8 /* MonitoringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26242BBC8D7E002216E8 /* MonitoringViewModel.swift */; };
+		30FF26272BBC8EEB002216E8 /* MonitorParametrsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26262BBC8EEB002216E8 /* MonitorParametrsView.swift */; };
+		30FF26292BBCA293002216E8 /* AddMonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26282BBCA293002216E8 /* AddMonitorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaneView.swift; sourceTree = "<group>"; };
 		30FF261C2BBBF454002216E8 /* PlaneInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneInfoView.swift; sourceTree = "<group>"; };
 		30FF261E2BBBF640002216E8 /* TextPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPlaneView.swift; sourceTree = "<group>"; };
+		30FF26222BBC8A17002216E8 /* MonitorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorCellView.swift; sourceTree = "<group>"; };
+		30FF26242BBC8D7E002216E8 /* MonitoringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringViewModel.swift; sourceTree = "<group>"; };
+		30FF26262BBC8EEB002216E8 /* MonitorParametrsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorParametrsView.swift; sourceTree = "<group>"; };
+		30FF26282BBCA293002216E8 /* AddMonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonitorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				309F44352BB7464C008D3A29 /* MonitoringView.swift */,
+				30FF26242BBC8D7E002216E8 /* MonitoringViewModel.swift */,
+				30FF26262BBC8EEB002216E8 /* MonitorParametrsView.swift */,
+				30FF26282BBCA293002216E8 /* AddMonitorView.swift */,
 			);
 			path = Monitoring;
 			sourceTree = "<group>";
@@ -150,6 +161,7 @@
 				30FF26162BBBD227002216E8 /* AirplaneCellView.swift */,
 				30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */,
 				30FF261E2BBBF640002216E8 /* TextPlaneView.swift */,
+				30FF26222BBC8A17002216E8 /* MonitorCellView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -227,6 +239,9 @@
 				309F44392BB7466C008D3A29 /* FligtsView.swift in Sources */,
 				309F44412BB74F45008D3A29 /* DataManager.swift in Sources */,
 				309F44362BB7464C008D3A29 /* MonitoringView.swift in Sources */,
+				30FF26232BBC8A17002216E8 /* MonitorCellView.swift in Sources */,
+				30FF26292BBCA293002216E8 /* AddMonitorView.swift in Sources */,
+				30FF26252BBC8D7E002216E8 /* MonitoringViewModel.swift in Sources */,
 				30FF261D2BBBF454002216E8 /* PlaneInfoView.swift in Sources */,
 				309F44332BB74619008D3A29 /* AirplanView.swift in Sources */,
 				309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */,
@@ -235,6 +250,7 @@
 				309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */,
 				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
+				30FF26272BBC8EEB002216E8 /* MonitorParametrsView.swift in Sources */,
 				309F44262BB744DA008D3A29 /* TabViewBoot.swift in Sources */,
 				309F44242BB744DA008D3A29 /* AircraftInspectionApp.swift in Sources */,
 				30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */,

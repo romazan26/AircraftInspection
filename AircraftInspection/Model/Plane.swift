@@ -15,3 +15,13 @@ struct Plane: Identifiable {
     var lastInspection: String
     var upcominInspection: String
 }
+
+struct Monitoring: Identifiable {
+    var id = UUID()
+    var name: String
+    var weight: Int
+    var engineTemperature: Int
+    var airPressure: Int
+    var fuelConsumption: Float
+    var balance: Bool
+}

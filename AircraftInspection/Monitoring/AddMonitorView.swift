@@ -1,5 +1,5 @@
 //
-//  AddPlaneView.swift
+//  AddMonitorView.swift
 //  AircraftInspection
 //
 //  Created by Роман on 02.04.2024.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct AddPlaneView: View {
-    @ObservedObject var viewModel: AirplaneviewModel
+struct AddMonitorView: View {
+    @ObservedObject var viewModel: MonitoringViewModel
     @Environment(\.dismiss) var dismiss
     
     var title = ""
@@ -16,19 +16,19 @@ struct AddPlaneView: View {
     
     var body: some View {
         VStack {
-            TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simpleName)
-            TextFieldPlaneView(placeHolder: "Model", text: $viewModel.simpleModel)
-            TextFieldPlaneView(placeHolder: "Serial number", text: $viewModel.simpleSerialNumber)
-            TextFieldPlaneView(placeHolder: "Last inspection", text: $viewModel.simpleLastInspection)
-            TextFieldPlaneView(placeHolder: "Upcoming inspection", text: $viewModel.simpleUpcomingInspection)
+            TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simplename)
+            TextFieldPlaneView(placeHolder: "Weight", text: $viewModel.simpleweight)
+            TextFieldPlaneView(placeHolder: "Air Pressure", text: $viewModel.simpleairPressure)
+            TextFieldPlaneView(placeHolder: "fuel Consumption", text: $viewModel.simplefuelConsumption)
+            TextFieldPlaneView(placeHolder: "Temperature", text: $viewModel.simpleengineTemperature)
             Spacer()
             
             //MARK: - Save Button
             Button(action: {
                 if title == "Add plane" {
-                    viewModel.addPlane()
+                    viewModel.addmonitor()
                 } else {
-                    viewModel.replaceInfoPlane()
+                   // viewModel.replaceInfoPlane()
                 }
                 dismiss()
             }, label: {
@@ -44,12 +44,12 @@ struct AddPlaneView: View {
             .navigationTitle(title)
         }.onAppear(perform: {
             if title == "Edit" {
-                viewModel.fillChosePlane()
+               // viewModel.fillChosePlane()
             }
         })
     }
 }
 
 #Preview {
-    AddPlaneView(viewModel: AirplaneviewModel())
+    AddMonitorView(viewModel: MonitoringViewModel())
 }

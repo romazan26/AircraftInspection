@@ -10,7 +10,7 @@ import SwiftUI
 struct AirplanView: View {
     @ObservedObject var viewModel = AirplaneviewModel()
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(spacing: 15) {
             
             //MARK: Title
             VStack {
@@ -25,29 +25,33 @@ struct AirplanView: View {
                     ButtonCircle()
                 })
                 .foregroundStyle(.redForApp)
-                .offset(y: 100)
+                .offset(y: 45)
             }
             .foregroundStyle(.black)
-            .padding(70)
+            .padding(.top, 86)
             .background {
                 Color(.white)
+                    .frame(width: 393, height: 338)
                     .cornerRadius(10)
             }
             
             
-            Text("Your planes")
-                .padding(5)
-                .padding(.top, 20)
+            
             
             //MARK: - Planes
-            ScrollView {
-                ForEach(viewModel.planes) { plane in
-                    NavigationLink(destination: PlaneInfoView(viewModel: viewModel, plane: plane)) {
-                        AirplaneCellView(airplane: plane).frame(height: 108)
+            VStack(alignment: .leading) {
+                Text("Your planes")
+                    .padding(5)
+                    .padding(.top, 20)
+                ScrollView {
+                    ForEach(viewModel.planes) { plane in
+                        NavigationLink(destination: PlaneInfoView(viewModel: viewModel, plane: plane)) {
+                            AirplaneCellView(airplane: plane).frame(height: 108)
+                        }
                     }
                 }
             }
-        }
+        }.ignoresSafeArea()
     }
 }
 

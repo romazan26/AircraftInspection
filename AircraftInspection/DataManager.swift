@@ -23,5 +23,18 @@ final class DataManager {
         
         return planes
     }
+    
+    func createTempDataMonitor() -> [Monitoring] {
+        var monitors: [Monitoring] = []
+        let monitor = Monitoring(name: "Airbus A380",
+                                 weight: 160,
+                                 engineTemperature: 150,
+                                 airPressure: 600,
+                                 fuelConsumption: 19.1,
+                                 balance: true)
+        
+        monitors.append(monitor)
+        return monitors
+    }
 }
 

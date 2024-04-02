@@ -9,7 +9,7 @@ import Foundation
 
 final class AirplaneviewModel: ObservableObject {
     
-    @Published var planes: [Plane] = []
+    @Published var planes: [Plane] = DataManager.shared.createTempData()
     @Published var choosPlane: Plane!
     
     @Published var simpleName = ""
@@ -47,10 +47,18 @@ final class AirplaneviewModel: ObservableObject {
         simpleLastInspection = choosPlane.lastInspection
         simpleUpcomingInspection = choosPlane.upcominInspection
     }
-    func replaceInfiPlane(){
+    
+    func replaceInfoPlane(){
+        var index = 0
         for plane in planes {
             if plane.id == choosPlane.id{
+                planes[index].name = simpleName
+                planes[index].model = simpleModel
+                planes[index].serialNumber = simpleSerialNumber
+                planes[index].lastInspection = simpleLastInspection
+                planes[index].upcominInspection = simpleUpcomingInspection
             }
+            index += 1
         }
     }
 }
