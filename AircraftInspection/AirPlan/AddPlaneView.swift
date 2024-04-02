@@ -11,6 +11,8 @@ struct AddPlaneView: View {
     @ObservedObject var viewModel: AirplaneviewModel
     @Environment(\.dismiss) var dismiss
     
+    var title = ""
+    
     var body: some View {
         VStack {
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simpleName)
@@ -20,7 +22,12 @@ struct AddPlaneView: View {
             TextFieldPlaneView(placeHolder: "Upcoming inspection", text: $viewModel.simpleUpcomingInspection)
             Spacer()
             Button(action: {
-                viewModel.addPlane()
+                if title == "Add plane" {
+                    viewModel.addPlane()
+                } else {
+                    
+                }
+                
                 dismiss()
             }, label: {
                 Text("SAVE").foregroundStyle(.black)
@@ -32,7 +39,7 @@ struct AddPlaneView: View {
             .cornerRadius(15)
             .padding()
             
-            .navigationTitle("Add plane")
+            .navigationTitle(title)
         }
     }
 }

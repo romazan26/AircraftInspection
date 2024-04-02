@@ -14,21 +14,26 @@ struct TextPlaneView: View {
     
     var body: some View {
   
-        VStack {
-            Text(placeHolder)
-                .font(.callout)
-                .foregroundStyle(.gray)
-            Text(text)
-                .font(.title2).bold()
+        HStack {
+            VStack(alignment: .leading) {
+                Text(placeHolder)
+                    .font(.callout)
+                    .foregroundStyle(.gray)
+                Text(text)
+                    .font(.title2).bold()
+                    
+                
+            }
+            .padding()
             
-        }
-        .frame(width: 335, height: 89)
-        .background(Color(.cellBackground))
+            Spacer()
+        }.frame(width: 335, height: 89)
+            .background(Color(.cellBackground))
         .cornerRadius(10)
         
     }
 }
 
 #Preview {
-    TextPlaneView(placeHolder: "Madel", text: "Qatar Airways")
+    TextPlaneView(placeHolder: "Model", text: "Qatar Airways")
 }

@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct PlaneInfoView: View {
+    
+    @ObservedObject var viewModel: AirplaneviewModel
     var plane: Plane
+    @State private var showAlert: Bool = false
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             Spacer()
@@ -29,13 +34,30 @@ struct PlaneInfoView: View {
             TextPlaneView(placeHolder: "Last inspection", text: plane.lastInspection)
             TextPlaneView(placeHolder: "Upcoming inspection", text: plane.upcominInspection)
         }
+        .alert(isPresented: $showAlert, content: {
+            Alert(title: Text("Deletion"),
+                  message: Text("Do you really want to delete it?"),
+                  primaryButton: .cancel(Text("No")),
+                  secondaryButton: .destructive(Text("Yes"), action: {
+                viewModel.deletePlane(planeId: plane.id)
+                dismiss()
+            }))
+        })
+        
+        //MARK: - ToolBar
         .toolbar(content: {
             ToolbarItem(placement: .automatic) {
                 HStack {
-                    Button(action: {}, label: {
+                    NavigationLink {
+                        AddPlaneView(viewModel: AirplaneviewModel(planes: [plane]), title: "Edit")
+                    } label: {
                         Image(systemName: "pencil")
-                    })
-                    Button(action: {}, label: {
+                    }
+                    
+                    Button(action: {
+                        showAlert = true
+                        
+                    }, label: {
                         Image(systemName: "trash.fill")
                     })
                 }
@@ -45,5 +67,5 @@ struct PlaneInfoView: View {
 }
 
 #Preview {
-    PlaneInfoView(plane: DataManager.shared.createTempData()[0])
+    PlaneInfoView(viewModel: AirplaneviewModel(planes: DataManager.shared.createTempData()), plane: DataManager.shared.createTempData()[0])
 }

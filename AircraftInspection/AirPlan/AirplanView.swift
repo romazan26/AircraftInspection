@@ -21,7 +21,7 @@ struct AirplanView: View {
                     .frame(width: 254, height: 94)
                 
                 //MARK: Add Button
-                NavigationLink(destination: AddPlaneView(viewModel: viewModel), label: {
+                NavigationLink(destination: AddPlaneView(viewModel: viewModel, title: "Add plane"), label: {
                     ButtonCircle()
                 })
                 .foregroundStyle(.redForApp)
@@ -42,8 +42,8 @@ struct AirplanView: View {
             //MARK: - Planes
             ScrollView {
                 ForEach(viewModel.planes) { plane in
-                    NavigationLink(destination: PlaneInfoView(plane: plane)) {
-                        AirplaneCellView(airplane: plane)
+                    NavigationLink(destination: PlaneInfoView(viewModel: viewModel, plane: plane)) {
+                        AirplaneCellView(airplane: plane).frame(height: 108)
                     }
                 }
             }

@@ -23,7 +23,7 @@ final class AirplaneviewModel: ObservableObject {
     }
     
     func addPlane() {
-        var plane = Plane(name: simpleName,
+        let plane = Plane(name: simpleName,
                           model: simpleModel,
                           serialNumber: simpleSerialNumber,
                           lastInspection: simpleLastInspection,
@@ -36,5 +36,11 @@ final class AirplaneviewModel: ObservableObject {
         simpleSerialNumber = ""
         simpleLastInspection = ""
         simpleUpcomingInspection = ""
+    }
+    
+    func deletePlane(planeId: UUID) {
+        planes.removeAll { plane in
+            plane.id == planeId
+        }
     }
 }
