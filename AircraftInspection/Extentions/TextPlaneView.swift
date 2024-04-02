@@ -1,5 +1,5 @@
 //
-//  TextFieldPlaneView.swift
+//  TextPlaneView.swift
 //  AircraftInspection
 //
 //  Created by Роман on 02.04.2024.
@@ -7,25 +7,28 @@
 
 import SwiftUI
 
-struct TextFieldPlaneView: View {
+struct TextPlaneView: View {
     
     @State var placeHolder: String
-    @Binding var text: String
+    @State var text: String
     
     var body: some View {
-        VStack(alignment: .leading) {
+  
+        VStack {
             Text(placeHolder)
                 .font(.callout)
                 .foregroundStyle(.gray)
-            TextField("", text: $text)
+            Text(text)
                 .font(.title2).bold()
+            
         }
-        .padding()
+        .frame(width: 335, height: 89)
         .background(Color(.cellBackground))
         .cornerRadius(10)
+        
     }
 }
 
 #Preview {
-    TextFieldPlaneView(placeHolder: "Name", text: .constant("Airbus"))
+    TextPlaneView(placeHolder: "Madel", text: "Qatar Airways")
 }

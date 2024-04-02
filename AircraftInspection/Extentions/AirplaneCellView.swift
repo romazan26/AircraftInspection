@@ -24,13 +24,17 @@ struct AirplaneCellView: View {
                     .foregroundStyle(.gray)
                 
                 VStack(alignment: .leading) {
-                    Text(airplane.name).font(.title).bold()
+                    Text(airplane.name)
+                        .font(.title)
+                        .bold()
+                        .foregroundStyle(.white)
                     Text(airplane.model).foregroundStyle(.gray)
                 }
                 Spacer()
                 ZStack {
                     Circle()
                         .frame(width: 31,height: 31)
+                        .foregroundStyle(.white)
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.black)
                         .bold()

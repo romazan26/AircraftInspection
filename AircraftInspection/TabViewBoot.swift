@@ -16,7 +16,7 @@ struct TabViewBoot: View {
                 FligtsView().tabItem { Label("Flights", systemImage: "airplane.departure") }
                 AnalyticsView().tabItem { Label("Analytics", systemImage: "doc.plaintext.fill") }
             }
-        }
+        }.accentColor(.redForApp)
     }
 }
 

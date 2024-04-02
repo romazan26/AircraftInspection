@@ -12,18 +12,20 @@ struct AirplanView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             
+            //MARK: Title
             VStack {
                 Text("Arplain").font(.title).bold()
                 Text("Add your airplane for maintenance")
                 Image(.airplane)
                     .resizable()
                     .frame(width: 254, height: 94)
+                
+                //MARK: Add Button
                 NavigationLink(destination: AddPlaneView(viewModel: viewModel), label: {
                     ButtonCircle()
                 })
-                
-                    .foregroundStyle(.accent)
-               .offset(y: 100)
+                .foregroundStyle(.redForApp)
+                .offset(y: 100)
             }
             .foregroundStyle(.black)
             .padding(70)
@@ -36,13 +38,14 @@ struct AirplanView: View {
             Text("Your planes")
                 .padding(5)
                 .padding(.top, 20)
-                
+            
+            //MARK: - Planes
             ScrollView {
                 ForEach(viewModel.planes) { plane in
-                    AirplaneCellView(airplane: plane)
-                }.onAppear(perform: {
-                    print(viewModel.planes)
-                })
+                    NavigationLink(destination: PlaneInfoView(plane: plane)) {
+                        AirplaneCellView(airplane: plane)
+                    }
+                }
             }
         }
     }

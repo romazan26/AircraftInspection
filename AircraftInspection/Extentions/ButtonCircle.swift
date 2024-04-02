@@ -15,7 +15,7 @@ struct ButtonCircle: View {
                 Image(systemName: "plus")
                     .frame(width: 27, height: 27)
                     .foregroundStyle(.white)
-            }.foregroundStyle(.accent)
+            }.foregroundStyle(.redForApp)
     }
 }
 

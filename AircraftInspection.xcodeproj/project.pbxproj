@@ -22,6 +22,8 @@
 		30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26162BBBD227002216E8 /* AirplaneCellView.swift */; };
 		30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26182BBBE182002216E8 /* AddPlaneView.swift */; };
 		30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */; };
+		30FF261D2BBBF454002216E8 /* PlaneInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261C2BBBF454002216E8 /* PlaneInfoView.swift */; };
+		30FF261F2BBBF640002216E8 /* TextPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261E2BBBF640002216E8 /* TextPlaneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		30FF26162BBBD227002216E8 /* AirplaneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneCellView.swift; sourceTree = "<group>"; };
 		30FF26182BBBE182002216E8 /* AddPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaneView.swift; sourceTree = "<group>"; };
 		30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaneView.swift; sourceTree = "<group>"; };
+		30FF261C2BBBF454002216E8 /* PlaneInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneInfoView.swift; sourceTree = "<group>"; };
+		30FF261E2BBBF640002216E8 /* TextPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPlaneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,10 @@
 		309F44312BB74603008D3A29 /* AirPlan */ = {
 			isa = PBXGroup;
 			children = (
-				309F44322BB74619008D3A29 /* AirplanView.swift */,
 				309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */,
+				309F44322BB74619008D3A29 /* AirplanView.swift */,
 				30FF26182BBBE182002216E8 /* AddPlaneView.swift */,
+				30FF261C2BBBF454002216E8 /* PlaneInfoView.swift */,
 			);
 			path = AirPlan;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 				309F44452BB75881008D3A29 /* ButtonCircle.swift */,
 				30FF26162BBBD227002216E8 /* AirplaneCellView.swift */,
 				30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */,
+				30FF261E2BBBF640002216E8 /* TextPlaneView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -221,9 +227,11 @@
 				309F44392BB7466C008D3A29 /* FligtsView.swift in Sources */,
 				309F44412BB74F45008D3A29 /* DataManager.swift in Sources */,
 				309F44362BB7464C008D3A29 /* MonitoringView.swift in Sources */,
+				30FF261D2BBBF454002216E8 /* PlaneInfoView.swift in Sources */,
 				309F44332BB74619008D3A29 /* AirplanView.swift in Sources */,
 				309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */,
 				30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */,
+				30FF261F2BBBF640002216E8 /* TextPlaneView.swift in Sources */,
 				309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */,
 				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
