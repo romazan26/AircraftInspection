@@ -13,13 +13,14 @@ struct MonitorCellView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(.cellBackground)
-                .frame(width: 340, height: 89)
-                .offset(x: -20)
+                .frame(width: 370, height: 89)
+                .offset(x: -10)
             HStack(spacing: 30) {
                 Image(systemName: "gearshape.2.fill")
                     .resizable()
                     .frame(width: 37, height: 30)
                     .foregroundStyle(.white)
+                    .offset(x: 13)
                 Rectangle()
                     .frame(width: 1, height: 41)
                     .foregroundStyle(.gray)
@@ -28,7 +29,7 @@ struct MonitorCellView: View {
                         .font(.title)
                         .bold()
                         .foregroundStyle(.white)
-     
+     Spacer()
                 ZStack {
                     Circle()
                         .frame(width: 31,height: 31)
@@ -37,7 +38,7 @@ struct MonitorCellView: View {
                         .foregroundStyle(.black)
                         .bold()
                 }
-            }.padding()
+            }
             
         }.padding(8)
     }

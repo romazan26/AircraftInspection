@@ -10,25 +10,39 @@ import SwiftUI
 struct MonitorParametrsView: View {
     
     @ObservedObject var viewModel: MonitoringViewModel
+    var chooseMonitor: Monitoring
     @State private var showAlert: Bool = false
     @Environment(\.dismiss) var dismiss
     
-    
     var body: some View {
-        VStack{
-            Spacer()
-            Text(viewModel.chooseMonitor.name).font(.largeTitle).bold()
-            Text("Plane parameters")
-            Spacer()
+        VStack(spacing: 20){
+            
+            VStack {
+                Text(chooseMonitor.name).font(.largeTitle).bold()
+                Text("Plane parameters")
+            }.padding(.top, -80)
+            
+            
             VStack{
-                TextPlaneView(placeHolder: "Weight", text: String(viewModel.chooseMonitor.weight) + " kg")
-                TextPlaneView(placeHolder: "Balance", text: String(viewModel.chooseMonitor.balance ? "Good" : "Bad"))
-                    .foregroundStyle(viewModel.chooseMonitor.balance ? .green : .red)
-                TextPlaneView(placeHolder: "Engine temperature", text: String(viewModel.chooseMonitor.engineTemperature) + " kg")
-                TextPlaneView(placeHolder: "Air pressure", text: String(viewModel.chooseMonitor.airPressure) + " GPa")
-                TextPlaneView(placeHolder: "Fuel consumption", text: String(viewModel.chooseMonitor.fuelConsumption) + " g/pass-km")
+                TextPlaneView(placeHolder: "Weight", text: String(chooseMonitor.weight) + " kg")
+                ZStack {
+                    TextPlaneView(placeHolder: "Balance", text: String(chooseMonitor.balance ? "Good" : "Violated"))
+                        .foregroundStyle(chooseMonitor.balance ? .green : .red)
+                   
+                        Image(systemName: chooseMonitor.balance ? "checkmark.circle.fill" : "xmark.circle.fill")
+                            .resizable()
+                            .frame(width: 26, height: 26)
+                            .foregroundStyle(chooseMonitor.balance ? .green : .red)
+                        .offset(x: 130)
+                }
+                TextPlaneView(placeHolder: "Engine temperature", text: String(chooseMonitor.engineTemperature) + " kg")
+                TextPlaneView(placeHolder: "Air pressure", text: String(chooseMonitor.airPressure) + " GPa")
+                TextPlaneView(placeHolder: "Fuel consumption", text: String(chooseMonitor.fuelConsumption) + " g/pass-km")
             }
         }
+        .onAppear(perform: {
+            viewModel.chooseMonitor = chooseMonitor
+        })
         //MARK: - ALERT
         .alert(isPresented: $showAlert, content: {
             Alert(title: Text("Deletion"),
@@ -44,18 +58,22 @@ struct MonitorParametrsView: View {
         .toolbar(content: {
             ToolbarItem(placement: .automatic) {
                 HStack {
-                    Image(systemName: "pencil")
+                    NavigationLink {
+                        EditeMonitorView(viewModel: viewModel)
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
+
+                    
                     Button(action: {showAlert = true}, label: {
                         Image(systemName: "trash.fill")
                     })
-                    
                 }
-                
             }
         })
     }
 }
 
 #Preview {
-    MonitorParametrsView(viewModel: MonitoringViewModel())
+    MonitorParametrsView(viewModel: MonitoringViewModel(), chooseMonitor: DataManager.shared.createTempDataMonitor()[0])
 }

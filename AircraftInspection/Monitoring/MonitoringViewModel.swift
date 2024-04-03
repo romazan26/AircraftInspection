@@ -45,4 +45,28 @@ final class MonitoringViewModel: ObservableObject {
         simplefuelConsumption = ""
         simplebalance = false
     }
+    
+    func fillChooseMonitor() {
+        simplename = chooseMonitor.name
+        simpleweight = String(chooseMonitor.weight)
+        simpleengineTemperature = String(chooseMonitor.engineTemperature)
+        simpleairPressure = String(chooseMonitor.airPressure)
+        simplefuelConsumption = String(chooseMonitor.fuelConsumption)
+        simplebalance = chooseMonitor.balance
+    }
+    
+    func replaceMonitor() {
+        var index = 0
+        for monitor in monitors {
+            if monitor.id == chooseMonitor.id{
+                monitors[index].name = simplename
+                monitors[index].weight = Int(simpleweight) ?? 0
+                monitors[index].airPressure = Int(simpleairPressure) ?? 0
+                monitors[index].engineTemperature = Int(simpleengineTemperature) ?? 0
+                monitors[index].fuelConsumption = Float(simplefuelConsumption) ?? 0
+                monitors[index].balance = simplebalance
+            }
+            index += 1
+        }
+    }
 }

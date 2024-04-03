@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MonitoringView: View {
+    
     @ObservedObject var viewModel = MonitoringViewModel()
+    
     var body: some View {
         
         
@@ -45,11 +47,9 @@ struct MonitoringView: View {
                     .padding(.top, 20)
                 ScrollView {
                     ForEach(viewModel.monitors) { monitor in
-                        NavigationLink(destination: MonitorParametrsView(viewModel: viewModel)) {
+                        NavigationLink(destination: MonitorParametrsView(viewModel: viewModel, chooseMonitor: monitor)) {
                             MonitorCellView(monitor: monitor)
-                                .onAppear {
-                                    viewModel.chooseMonitor = monitor
-                                }           
+
                         }
                     }
                 }
