@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AnalyticsView: View {
+    @ObservedObject var viewModel: FlightViewModel
     var body: some View {
         VStack {
             
@@ -29,12 +30,10 @@ struct AnalyticsView: View {
             //MARK: - Planes
             VStack(alignment: .leading) {
                 ScrollView {
-//                    ForEach(viewModel.monitors) { monitor in
-//                        NavigationLink(destination: MonitorParametrsView(viewModel: viewModel, chooseMonitor: monitor)) {
-//                            MonitorCellView(monitor: monitor)
-//
-//                        }
-//                    }
+                    ForEach(viewModel.flights) { flight in
+                        Text(flight.name)
+                        }
+                    
                 }
             }.padding(.top, 50)
         }.ignoresSafeArea()
@@ -42,5 +41,5 @@ struct AnalyticsView: View {
 }
 
 #Preview {
-    AnalyticsView()
+    AnalyticsView(viewModel: FlightViewModel())
 }

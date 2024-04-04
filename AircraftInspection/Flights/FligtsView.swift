@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FligtsView: View {
     
-    @ObservedObject var viewModel = FlightViewModel()
+    @ObservedObject var viewModel: FlightViewModel
     
     var body: some View {
         VStack {
