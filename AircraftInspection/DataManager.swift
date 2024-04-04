@@ -36,5 +36,17 @@ final class DataManager {
         monitors.append(monitor)
         return monitors
     }
+    
+    func createTempDataFlight() -> [Flight] {
+        var flights: [Flight] = []
+        let flight = Flight(name: "Airbus A380",
+                            dateOfVertification: "23.02.24",
+                            systemsOfComponents: false,
+                            electronicsAndAvoinics: true,
+                            identificationAndCertification: true,
+                            note: "")
+        flights.append(flight)
+        return flights
+    }
 }
 

@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct FligtsView: View {
+    
+    @ObservedObject var viewModel = FlightViewModel()
+    
     var body: some View {
         VStack {
             VStack {
+                
                 //MARK: Title
                 Text("Flights").font(.title).bold()
                 Text("Fill out nearest flights to check the aircraft")
@@ -19,11 +23,11 @@ struct FligtsView: View {
                     .frame(width: 112, height: 112)
                 
                 //MARK: Add Button
-                //                NavigationLink(destination: AddMonitorView(viewModel: viewModel, title: "Add plane"), label: {
-                //                    ButtonCircle()
-                //                })
-                //                .foregroundStyle(.redForApp)
-                //                .offset(y: 40)
+                NavigationLink(destination: AddFlightView(viewModel: viewModel), label: {
+                                    ButtonCircle()
+                                })
+                                .foregroundStyle(.redForApp)
+                                .offset(y: 40)
             }
             .foregroundStyle(.black)
             .padding(.top, 86)
@@ -32,24 +36,22 @@ struct FligtsView: View {
                     .frame(width: 393, height: 338)
                     .cornerRadius(10)
             }
-            //MARK: - Planes
+            
+            //MARK: - Flight
             VStack(alignment: .leading) {
                 Text("Nearest flights")
                     .padding(5)
                     
                 ScrollView {
-//                    ForEach(viewModel.monitors) { monitor in
-//                        NavigationLink(destination: MonitorParametrsView(viewModel: viewModel, chooseMonitor: monitor)) {
-//                            MonitorCellView(monitor: monitor)
-//
-//                        }
-//                    }
+                    ForEach(viewModel.flights) { flight in
+                        FlightCellView(viewModel: viewModel, flight: flight)
+                    }
                 }
-            }.padding(.top, 50)
+            }.padding(.top, 30)
         }.ignoresSafeArea()
     }
 }
 
 #Preview {
-    FligtsView()
+    FligtsView(viewModel: FlightViewModel())
 }

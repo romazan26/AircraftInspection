@@ -19,6 +19,10 @@
 		309F44412BB74F45008D3A29 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44402BB74F45008D3A29 /* DataManager.swift */; };
 		309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */; };
 		309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44452BB75881008D3A29 /* ButtonCircle.swift */; };
+		30FC8CDD2BBF2754003287D2 /* FlightCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CDC2BBF2754003287D2 /* FlightCellView.swift */; };
+		30FC8CDF2BBF2D62003287D2 /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CDE2BBF2D62003287D2 /* FlightViewModel.swift */; };
+		30FC8CE12BBF2E24003287D2 /* AddFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE02BBF2E24003287D2 /* AddFlightView.swift */; };
+		30FC8CE32BBF37DF003287D2 /* FlightChekingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE22BBF37DF003287D2 /* FlightChekingView.swift */; };
 		30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26162BBBD227002216E8 /* AirplaneCellView.swift */; };
 		30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26182BBBE182002216E8 /* AddPlaneView.swift */; };
 		30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */; };
@@ -46,6 +50,10 @@
 		309F44402BB74F45008D3A29 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneviewModel.swift; sourceTree = "<group>"; };
 		309F44452BB75881008D3A29 /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
+		30FC8CDC2BBF2754003287D2 /* FlightCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCellView.swift; sourceTree = "<group>"; };
+		30FC8CDE2BBF2D62003287D2 /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
+		30FC8CE02BBF2E24003287D2 /* AddFlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlightView.swift; sourceTree = "<group>"; };
+		30FC8CE22BBF37DF003287D2 /* FlightChekingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightChekingView.swift; sourceTree = "<group>"; };
 		30FF26162BBBD227002216E8 /* AirplaneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneCellView.swift; sourceTree = "<group>"; };
 		30FF26182BBBE182002216E8 /* AddPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaneView.swift; sourceTree = "<group>"; };
 		30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaneView.swift; sourceTree = "<group>"; };
@@ -139,6 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				309F44382BB7466C008D3A29 /* FligtsView.swift */,
+				30FC8CDE2BBF2D62003287D2 /* FlightViewModel.swift */,
+				30FC8CE02BBF2E24003287D2 /* AddFlightView.swift */,
+				30FC8CE22BBF37DF003287D2 /* FlightChekingView.swift */,
 			);
 			path = Flights;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 				30FF26162BBBD227002216E8 /* AirplaneCellView.swift */,
 				30FF26222BBC8A17002216E8 /* MonitorCellView.swift */,
 				30FF262A2BBDD5B9002216E8 /* ButtonChooseView.swift */,
+				30FC8CDC2BBF2754003287D2 /* FlightCellView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -257,11 +269,15 @@
 				309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */,
 				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
+				30FC8CDF2BBF2D62003287D2 /* FlightViewModel.swift in Sources */,
+				30FC8CE12BBF2E24003287D2 /* AddFlightView.swift in Sources */,
+				30FC8CE32BBF37DF003287D2 /* FlightChekingView.swift in Sources */,
 				30FF262B2BBDD5B9002216E8 /* ButtonChooseView.swift in Sources */,
 				30FF26272BBC8EEB002216E8 /* MonitorParametrsView.swift in Sources */,
 				309F44262BB744DA008D3A29 /* TabViewBoot.swift in Sources */,
 				309F44242BB744DA008D3A29 /* AircraftInspectionApp.swift in Sources */,
 				30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */,
+				30FC8CDD2BBF2754003287D2 /* FlightCellView.swift in Sources */,
 				309F443F2BB74C43008D3A29 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

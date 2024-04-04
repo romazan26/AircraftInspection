@@ -25,3 +25,13 @@ struct Monitoring: Identifiable {
     var fuelConsumption: Float
     var balance: Bool
 }
+
+struct Flight: Identifiable {
+    var id = UUID()
+    var name: String
+    var dateOfVertification: String
+    var systemsOfComponents: Bool
+    var electronicsAndAvoinics: Bool
+    var identificationAndCertification: Bool
+    var note: String
+}
