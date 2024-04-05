@@ -17,15 +17,14 @@ struct EditeMonitorView: View {
             
             VStack{
                 TextFieldPlaneView(placeHolder: "Weight", text: $viewModel.simpleweight)
-                ZStack {
-                    TextPlaneView(placeHolder: "Balance", text: String(viewModel.chooseMonitor.balance ? "Good" : "Violated"))
-                        .foregroundStyle(viewModel.chooseMonitor.balance ? .green : .red)
-                   
-                    Image(systemName: viewModel.chooseMonitor.balance ? "checkmark.circle.fill" : "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 26, height: 26)
-                            .foregroundStyle(viewModel.chooseMonitor.balance ? .green : .red)
-                        .offset(x: 130)
+                HStack(spacing: 25){
+                    Text("Balance")
+                    ButtonChooseView(action: {
+                        viewModel.simplebalance = true
+                    }, choose: viewModel.simplebalance, title: "Good")
+                    ButtonChooseView(action: {
+                        viewModel.simplebalance = false
+                    }, choose: !viewModel.simplebalance, title: "Violated")
                 }
                 TextFieldPlaneView(placeHolder: "Engine temperature", text: $viewModel.simpleengineTemperature)
                 TextFieldPlaneView(placeHolder: "Air pressure", text: $viewModel.simpleairPressure)

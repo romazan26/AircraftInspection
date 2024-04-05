@@ -24,7 +24,7 @@ struct AnalyticsView: View {
             .padding(.top, 86)
             .background {
                 Color(.white)
-                    .frame(width: 393, height: 338)
+                    .frame(width: 393, height: 410)
                     .cornerRadius(10)
             }
             //MARK: - Planes
@@ -36,11 +36,9 @@ struct AnalyticsView: View {
                         } label: {
                             AnalyticCellView(flight: flight)
                         }
-
-                        }
-                    
+                    }
                 }
-            }.padding(.top, 50)
+            }.padding(.top, 90)
         }.ignoresSafeArea()
     }
 }

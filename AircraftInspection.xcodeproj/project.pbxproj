@@ -25,6 +25,9 @@
 		30FC8CE32BBF37DF003287D2 /* FlightChekingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE22BBF37DF003287D2 /* FlightChekingView.swift */; };
 		30FC8CE52BC01E2F003287D2 /* AnalyticCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE42BC01E2F003287D2 /* AnalyticCellView.swift */; };
 		30FC8CE72BC01FD8003287D2 /* AnalyticInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE62BC01FD8003287D2 /* AnalyticInfoView.swift */; };
+		30FC8CEA2BC06860003287D2 /* PageIntroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE92BC06860003287D2 /* PageIntroModel.swift */; };
+		30FC8CEC2BC06A7B003287D2 /* PageIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CEB2BC06A7B003287D2 /* PageIntroView.swift */; };
+		30FC8CEE2BC07122003287D2 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CED2BC07122003287D2 /* IntroView.swift */; };
 		30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26162BBBD227002216E8 /* AirplaneCellView.swift */; };
 		30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF26182BBBE182002216E8 /* AddPlaneView.swift */; };
 		30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */; };
@@ -58,6 +61,9 @@
 		30FC8CE22BBF37DF003287D2 /* FlightChekingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightChekingView.swift; sourceTree = "<group>"; };
 		30FC8CE42BC01E2F003287D2 /* AnalyticCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticCellView.swift; sourceTree = "<group>"; };
 		30FC8CE62BC01FD8003287D2 /* AnalyticInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticInfoView.swift; sourceTree = "<group>"; };
+		30FC8CE92BC06860003287D2 /* PageIntroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIntroModel.swift; sourceTree = "<group>"; };
+		30FC8CEB2BC06A7B003287D2 /* PageIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIntroView.swift; sourceTree = "<group>"; };
+		30FC8CED2BC07122003287D2 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		30FF26162BBBD227002216E8 /* AirplaneCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneCellView.swift; sourceTree = "<group>"; };
 		30FF26182BBBE182002216E8 /* AddPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaneView.swift; sourceTree = "<group>"; };
 		30FF261A2BBBE40A002216E8 /* TextFieldPlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaneView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 		309F44222BB744DA008D3A29 /* AircraftInspection */ = {
 			isa = PBXGroup;
 			children = (
+				30FC8CE82BC06829003287D2 /* Intro */,
 				309F44442BB75858008D3A29 /* Extentions */,
 				309F443D2BB74C2C008D3A29 /* Model */,
 				309F443A2BB746B8008D3A29 /* Analytics */,
@@ -190,6 +197,16 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		30FC8CE82BC06829003287D2 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				30FC8CE92BC06860003287D2 /* PageIntroModel.swift */,
+				30FC8CEB2BC06A7B003287D2 /* PageIntroView.swift */,
+				30FC8CED2BC07122003287D2 /* IntroView.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,8 +282,10 @@
 				309F44412BB74F45008D3A29 /* DataManager.swift in Sources */,
 				309F44362BB7464C008D3A29 /* MonitoringView.swift in Sources */,
 				30FF26232BBC8A17002216E8 /* MonitorCellView.swift in Sources */,
+				30FC8CEA2BC06860003287D2 /* PageIntroModel.swift in Sources */,
 				30FF26292BBCA293002216E8 /* AddMonitorView.swift in Sources */,
 				30FF26252BBC8D7E002216E8 /* MonitoringViewModel.swift in Sources */,
+				30FC8CEC2BC06A7B003287D2 /* PageIntroView.swift in Sources */,
 				30FF261D2BBBF454002216E8 /* PlaneInfoView.swift in Sources */,
 				309F44332BB74619008D3A29 /* AirplanView.swift in Sources */,
 				309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */,
@@ -275,6 +294,7 @@
 				30FF261F2BBBF640002216E8 /* TextPlaneView.swift in Sources */,
 				309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */,
 				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
+				30FC8CEE2BC07122003287D2 /* IntroView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
 				30FC8CDF2BBF2D62003287D2 /* FlightViewModel.swift in Sources */,
 				30FC8CE12BBF2E24003287D2 /* AddFlightView.swift in Sources */,
