@@ -10,13 +10,28 @@ import SwiftUI
 struct FligtsView: View {
     
     @ObservedObject var viewModel: FlightViewModel
+    @State private var showingConfirmation = false
     
     var body: some View {
         VStack {
             VStack {
                 
                 //MARK: Title
-                Text("Flights").font(.title).bold()
+                
+                HStack {
+                    Spacer()
+                    Text("Flights").font(.title).bold()
+                    Spacer()
+                    Button {
+                        showingConfirmation = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .frame(width: 24,height: 24)
+                            .foregroundStyle(.redForApp)
+                    }
+
+                }.padding(.horizontal)
                 Text("Fill out nearest flights to check the aircraft")
                 Image(.flight)
                     .resizable()
@@ -48,7 +63,16 @@ struct FligtsView: View {
                     }
                 }
             }.padding(.top, 30)
-        }.ignoresSafeArea()
+        }
+        .confirmationDialog("Settings", isPresented: $showingConfirmation, titleVisibility: .visible, actions: {
+            Button("Share app") {}
+            Button("Usage Policy") {}
+            Button("Rate app") {}
+            Button("Support") {}
+        }, message: {
+            Text(Date.now.formatted())
+        })
+        .ignoresSafeArea()
     }
 }
 

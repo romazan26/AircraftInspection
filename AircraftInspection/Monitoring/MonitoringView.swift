@@ -10,6 +10,7 @@ import SwiftUI
 struct MonitoringView: View {
     
     @ObservedObject var viewModel = MonitoringViewModel()
+    @State private var showingConfirmation = false
     
     var body: some View {
         
@@ -17,7 +18,21 @@ struct MonitoringView: View {
         VStack {
             VStack {
                 //MARK: Title
-                Text("Monitoring").font(.title).bold()
+                
+                HStack {
+                    Spacer()
+                    Text("Monitoring").font(.title).bold()
+                    Spacer()
+                    Button {
+                        showingConfirmation = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .frame(width: 24,height: 24)
+                            .foregroundStyle(.redForApp)
+                    }
+
+                }.padding(.horizontal)
                 Text("Track all aircraft parameters")
                 Image(.monitoring)
                     .resizable()
@@ -54,7 +69,16 @@ struct MonitoringView: View {
                     }
                 }
             }
-        }.ignoresSafeArea()
+        }
+        .confirmationDialog("Settings", isPresented: $showingConfirmation, titleVisibility: .visible, actions: {
+            Button("Share app") {}
+            Button("Usage Policy") {}
+            Button("Rate app") {}
+            Button("Support") {}
+        }, message: {
+            Text(Date.now.formatted())
+        })
+        .ignoresSafeArea()
     }
 }
 

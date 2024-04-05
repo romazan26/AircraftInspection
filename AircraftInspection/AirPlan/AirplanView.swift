@@ -9,12 +9,26 @@ import SwiftUI
 
 struct AirplanView: View {
     @ObservedObject var viewModel = AirplaneviewModel()
+    @State private var showingConfirmation = false
     var body: some View {
         VStack(spacing: 15) {
             
             //MARK: Title
             VStack {
-                Text("Arplain").font(.title).bold()
+                HStack {
+                    Spacer()
+                    Text("Arplain").font(.title).bold()
+                    Spacer()
+                    Button {
+                        showingConfirmation = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .frame(width: 24,height: 24)
+                            .foregroundStyle(.redForApp)
+                    }
+
+                }.padding(.horizontal)
                 Text("Add your airplane for maintenance")
                 Image(.airplane)
                     .resizable()
@@ -51,7 +65,17 @@ struct AirplanView: View {
                     }
                 }
             }
-        }.ignoresSafeArea()
+        }
+        
+        .confirmationDialog("Settings", isPresented: $showingConfirmation, titleVisibility: .visible, actions: {
+            Button("Share app") {}
+            Button("Usage Policy") {}
+            Button("Rate app") {}
+            Button("Support") {}
+        }, message: {
+            Text(Date.now.formatted())
+        })
+        .ignoresSafeArea()
     }
 }
 

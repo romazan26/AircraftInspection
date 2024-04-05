@@ -9,12 +9,27 @@ import SwiftUI
 
 struct AnalyticsView: View {
     @ObservedObject var viewModel: FlightViewModel
+    @State private var showingConfirmation = false
     var body: some View {
         VStack {
             
             //MARK: Title
             VStack {
-                Text("Analytics").font(.title).bold()
+                
+                HStack {
+                    Spacer()
+                    Text("Analytics").font(.title).bold()
+                    Spacer()
+                    Button {
+                        showingConfirmation = true
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .frame(width: 24,height: 24)
+                            .foregroundStyle(.redForApp)
+                    }
+
+                }.padding(.horizontal)
                 Text("Your reports will be displayed here")
                 Image(.analitic)
                     .resizable()
@@ -39,7 +54,17 @@ struct AnalyticsView: View {
                     }
                 }
             }.padding(.top, 90)
-        }.ignoresSafeArea()
+        }
+        
+        .confirmationDialog("Settings", isPresented: $showingConfirmation, titleVisibility: .visible, actions: {
+            Button("Share app") {}
+            Button("Usage Policy") {}
+            Button("Rate app") {}
+            Button("Support") {}
+        }, message: {
+            Text(Date.now.formatted())
+        })
+        .ignoresSafeArea()
     }
 }
 
