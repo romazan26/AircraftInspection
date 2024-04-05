@@ -54,4 +54,9 @@ final class FlightViewModel: ObservableObject {
         simpleIdentificationAndCertification = chooseFlight.identificationAndCertification
         simleNote = chooseFlight.note
     }
+    func deleteFlight(flightId: UUID) {
+        flights.removeAll { flight in
+            flight.id == flightId
+        }
+    }
 }

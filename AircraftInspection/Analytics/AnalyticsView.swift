@@ -31,7 +31,12 @@ struct AnalyticsView: View {
             VStack(alignment: .leading) {
                 ScrollView {
                     ForEach(viewModel.flights) { flight in
-                        Text(flight.name)
+                        NavigationLink {
+                            AnalyticInfoView(flight: flight, viewModel: viewModel)
+                        } label: {
+                            AnalyticCellView(flight: flight)
+                        }
+
                         }
                     
                 }
