@@ -67,13 +67,9 @@ struct AirplanView: View {
             }
         }
         
-        .confirmationDialog("Settings", isPresented: $showingConfirmation, titleVisibility: .visible, actions: {
-            Button("Share app") {}
-            Button("Usage Policy") {}
-            Button("Rate app") {}
-            Button("Support") {}
-        }, message: {
-            Text(Date.now.formatted())
+        .sheet(isPresented: $showingConfirmation, content: {
+            SettingsView()
+                .presentationDetents([.medium])
         })
         .ignoresSafeArea()
     }

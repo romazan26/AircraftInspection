@@ -39,13 +39,11 @@ struct IntroView: View {
                                             .foregroundStyle(.white)
                                     }.frame(width: 144, height: 47)
                                 }
-                                
                                 .padding()
                             }
                             .offset(y: 330)
                         }
                     }
-                    
                     .tag(page.tag)
                 }
             })
@@ -54,8 +52,22 @@ struct IntroView: View {
             })
             .ignoresSafeArea()
             .animation(.easeInOut, value: pageIndex)
-            .tabViewStyle(.page)
+            .tabViewStyle(.page(indexDisplayMode: .never))
             .indexViewStyle(.page(backgroundDisplayMode: .interactive))
+            
+            HStack{
+                ForEach(0..<pages.count) {  page in
+                    if pageIndex == page {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 38 , height: 4)
+                            .foregroundStyle(.redForApp)
+                    }else {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 27 , height: 4)
+                            .foregroundStyle(.white)
+                    }
+                }
+            }.offset(x: -100, y: 350)
             
         }
         }.onAppear {

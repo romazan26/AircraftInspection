@@ -19,6 +19,7 @@
 		309F44412BB74F45008D3A29 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44402BB74F45008D3A29 /* DataManager.swift */; };
 		309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */; };
 		309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44452BB75881008D3A29 /* ButtonCircle.swift */; };
+		30F488E12BC5BF21003F2F32 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F488E02BC5BF21003F2F32 /* SettingsView.swift */; };
 		30FC8CDD2BBF2754003287D2 /* FlightCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CDC2BBF2754003287D2 /* FlightCellView.swift */; };
 		30FC8CDF2BBF2D62003287D2 /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CDE2BBF2D62003287D2 /* FlightViewModel.swift */; };
 		30FC8CE12BBF2E24003287D2 /* AddFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8CE02BBF2E24003287D2 /* AddFlightView.swift */; };
@@ -57,6 +58,7 @@
 		309F44402BB74F45008D3A29 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneviewModel.swift; sourceTree = "<group>"; };
 		309F44452BB75881008D3A29 /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
+		30F488E02BC5BF21003F2F32 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		30FC8CDC2BBF2754003287D2 /* FlightCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCellView.swift; sourceTree = "<group>"; };
 		30FC8CDE2BBF2D62003287D2 /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
 		30FC8CE02BBF2E24003287D2 /* AddFlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlightView.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				30FC8CDC2BBF2754003287D2 /* FlightCellView.swift */,
 				30FC8CE42BC01E2F003287D2 /* AnalyticCellView.swift */,
 				30FC8CEF2BC0920C003287D2 /* ProgressBarView.swift */,
+				30F488E02BC5BF21003F2F32 /* SettingsView.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
 				30FC8CEE2BC07122003287D2 /* IntroView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
+				30F488E12BC5BF21003F2F32 /* SettingsView.swift in Sources */,
 				30FC8CDF2BBF2D62003287D2 /* FlightViewModel.swift in Sources */,
 				30FC8CE12BBF2E24003287D2 /* AddFlightView.swift in Sources */,
 				30FC8CE32BBF37DF003287D2 /* FlightChekingView.swift in Sources */,
