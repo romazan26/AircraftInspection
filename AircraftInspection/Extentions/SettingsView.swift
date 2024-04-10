@@ -27,7 +27,7 @@ struct SettingsView: View {
                 })
                 Spacer()
                 Text("Settings")
-                    .font(.largeTitle)
+                    .font(.title)
                 .bold()
                 Spacer()
             }.padding()
@@ -57,7 +57,7 @@ struct SettingsView: View {
             
             //MARK: - Date
             Text(Date.now.formatted())
-                .padding(.top, 40)
+                .font(.subheadline)
             
             Spacer()
         }
@@ -69,6 +69,7 @@ struct SettingsView: View {
         })
         .padding()
     }
+        
 }
 
 #Preview {
@@ -92,6 +93,6 @@ struct SettingRow: View {
                     .foregroundStyle(.gray)
                 Spacer()
             }.padding()
-        }.frame(width: 335, height: 64)
+        }.frame(width: 335, height: 54)
     }
 }

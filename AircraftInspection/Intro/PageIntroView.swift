@@ -10,7 +10,7 @@ import SwiftUI
 struct PageIntroView: View {
     var page: PageIntro
     var body: some View {
-        ZStack {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             Image(page.imageUrl)
                 .resizable()
                 .scaledToFit()
@@ -40,7 +40,7 @@ struct PageIntroView: View {
                 }
                 .padding()
                 .frame(height: 170)
-            }.offset(y: 300)
+            }
         }
     }
 }
