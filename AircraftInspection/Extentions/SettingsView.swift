@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct SettingsView: View {
+    
     @Environment(\.dismiss) var dismiss
+    @Environment(\.requestReview) var requestRewiew
+    @State private var isPresentPolicy = false
+    @State private var isPresentSupport = false
+    
     var body: some View {
         VStack{
             HStack {
@@ -25,14 +31,43 @@ struct SettingsView: View {
                 .bold()
                 Spacer()
             }.padding()
-            SettingRow(name: "Share app", imageName: "square.and.arrow.up")
-            SettingRow(name: "Usage Policy", imageName: "doc.on.doc")
-            SettingRow(name: "Rate app", imageName: "star")
-            SettingRow(name: "Support", imageName: "mappin.and.ellipse.circle")
+            
+            //MARK: - Share app
+            ShareLink(item: URL(string: "https://www.google.com/")!) {
+                SettingRow(name: "Share app", imageName: "square.and.arrow.up")
+            }
+            
+            //MARK: - Usage Policy
+            Button(action: { isPresentPolicy = true}, label: {
+                SettingRow(name: "Usage Policy", imageName: "doc.on.doc")
+            })
+            
+            //MARK: - Rate app
+            Button {
+                requestRewiew()
+            } label: {
+                SettingRow(name: "Rate app", imageName: "star")
+            }
+
+            //MARK: - Support
+            Button(action: {isPresentSupport = true}, label: {
+                SettingRow(name: "Support", imageName: "mappin.and.ellipse.circle")
+            })
+            
+            
+            //MARK: - Date
             Text(Date.now.formatted())
                 .padding(.top, 40)
+            
             Spacer()
-        }.padding()
+        }
+        .sheet(isPresented: $isPresentPolicy, content: {
+            WebViewPage(urlString: URL(string: "https://www.apple.com")!)
+        })
+        .sheet(isPresented: $isPresentSupport, content: {
+            WebViewPage(urlString: URL(string: "https://www.google.com")!)
+        })
+        .padding()
     }
 }
 
@@ -51,6 +86,7 @@ struct SettingRow: View {
                 Image(systemName: imageName)
                     .resizable()
                     .frame(width: 24,height: 24)
+                    .foregroundStyle(.white)
                 Spacer()
                 Text(name)
                     .foregroundStyle(.gray)

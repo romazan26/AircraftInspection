@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		304C49DB2BC70B4A0072685B /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304C49DA2BC70B4A0072685B /* webView.swift */; };
+		304C49DE2BC7157E0072685B /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304C49DD2BC7157E0072685B /* WebViewPage.swift */; };
 		309F44242BB744DA008D3A29 /* AircraftInspectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44232BB744DA008D3A29 /* AircraftInspectionApp.swift */; };
 		309F44262BB744DA008D3A29 /* TabViewBoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44252BB744DA008D3A29 /* TabViewBoot.swift */; };
 		309F44282BB744DC008D3A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309F44272BB744DC008D3A29 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		304C49DA2BC70B4A0072685B /* webView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
+		304C49DD2BC7157E0072685B /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
 		309F44202BB744DA008D3A29 /* AircraftInspection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AircraftInspection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309F44232BB744DA008D3A29 /* AircraftInspectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftInspectionApp.swift; sourceTree = "<group>"; };
 		309F44252BB744DA008D3A29 /* TabViewBoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewBoot.swift; sourceTree = "<group>"; };
@@ -94,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		304C49DC2BC7155E0072685B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				304C49DA2BC70B4A0072685B /* webView.swift */,
+				304C49DD2BC7157E0072685B /* WebViewPage.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		309F44172BB744D9008D3A29 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		309F44222BB744DA008D3A29 /* AircraftInspection */ = {
 			isa = PBXGroup;
 			children = (
+				304C49DC2BC7155E0072685B /* WebView */,
 				30FC8CE82BC06829003287D2 /* Intro */,
 				309F44442BB75858008D3A29 /* Extentions */,
 				309F443D2BB74C2C008D3A29 /* Model */,
@@ -307,7 +321,9 @@
 				30FF26172BBBD227002216E8 /* AirplaneCellView.swift in Sources */,
 				30FC8CEE2BC07122003287D2 /* IntroView.swift in Sources */,
 				309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */,
+				304C49DB2BC70B4A0072685B /* webView.swift in Sources */,
 				30F488E12BC5BF21003F2F32 /* SettingsView.swift in Sources */,
+				304C49DE2BC7157E0072685B /* WebViewPage.swift in Sources */,
 				30FC8CDF2BBF2D62003287D2 /* FlightViewModel.swift in Sources */,
 				30FC8CE12BBF2E24003287D2 /* AddFlightView.swift in Sources */,
 				30FC8CE32BBF37DF003287D2 /* FlightChekingView.swift in Sources */,
