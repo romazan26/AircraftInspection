@@ -22,6 +22,7 @@ struct AddMonitorView: View {
             TextFieldPlaneView(placeHolder: "Temperature", text: $viewModel.simpleengineTemperature)
             HStack(spacing: 25){
                 Text("Balance")
+                    .minimumScaleFactor(0.5)
                 ButtonChooseView(action: {
                     viewModel.simplebalance = true
                 }, choose: viewModel.simplebalance, title: "Good")
