@@ -31,22 +31,24 @@ struct IntroView: View {
                                     
                                     //MARK: - Page number
                                     if page == pages.last {
-                                        Button {
-                                            isPresented = true
-                                            dismiss()
-                                        } label: {
-                                            HStack {
-                                                Spacer()
-                                                ZStack{
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .foregroundStyle(.redForApp)
-                                                    Text("Begin")
-                                                        .foregroundStyle(.white)
-                                                }.frame(width: 144, height: 47)
-                                            }
-                                            .padding()
+                                        HStack {
+                                            Spacer()
+                                            Button {
+                                                isPresented = true
+                                                dismiss()
+                                            } label: {
+                                               
+                                                    ZStack{
+                                                        RoundedRectangle(cornerRadius: 10)
+                                                            .foregroundStyle(.redForApp)
+                                                        Text("Begin")
+                                                            .foregroundStyle(.white)
+                                                    }.frame(width: 144, height: 47)
+                                                
+                                                .padding()
                                         }
-                                        // .offset(y: 330)
+                                        }
+                                        
                                     }
                                 }
                                 .tag(page.tag)

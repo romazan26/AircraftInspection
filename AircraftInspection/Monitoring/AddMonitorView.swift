@@ -28,7 +28,7 @@ struct AddMonitorView: View {
                 ButtonChooseView(action: {
                     viewModel.simplebalance = false
                 }, choose: !viewModel.simplebalance, title: "Violated")
-            }.padding()
+            }
             Spacer()
             
             //MARK: - Save Button
@@ -42,9 +42,8 @@ struct AddMonitorView: View {
             .frame(height: 67)
             .background(Color.white)
             .cornerRadius(15)
-            .padding()
             .navigationTitle(title)
-        }
+        }.padding()
     }
 }
 
