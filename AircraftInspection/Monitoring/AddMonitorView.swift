@@ -15,6 +15,8 @@ struct AddMonitorView: View {
     
     var body: some View {
         VStack {
+            
+            //MARK: - TextField Group
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simplename)
             TextFieldPlaneView(placeHolder: "Weight", text: $viewModel.simpleweight)
             TextFieldPlaneView(placeHolder: "Air Pressure", text: $viewModel.simpleairPressure)
@@ -30,6 +32,7 @@ struct AddMonitorView: View {
                     viewModel.simplebalance = false
                 }, choose: !viewModel.simplebalance, title: "Violated")
             }
+            
             Spacer()
             
             //MARK: - Save Button
@@ -40,7 +43,7 @@ struct AddMonitorView: View {
                 Text("SAVE").foregroundStyle(.black)
             })
             .frame(maxWidth: .infinity)
-            .frame(height: 67)
+            .frame(height: 60)
             .background(Color.white)
             .cornerRadius(15)
             .navigationTitle(title)

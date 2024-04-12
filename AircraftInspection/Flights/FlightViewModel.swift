@@ -13,12 +13,20 @@ final class FlightViewModel: ObservableObject {
     
     @Published var chooseFlight: Flight!
     @Published var simpleName = ""
-    @Published var simpleDate = Date.now.formatted()
+    @Published var simpleDate =  Date.now.formatted(date: .long, time: .shortened)
     @Published var simpleSystemAndComponents = false
     @Published var simpleElectronicsAndAvionics = false
     @Published var simpleIdentificationAndCertification = false
     @Published var simleNote = ""
     
+    func dateFormated(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.timeZone = TimeZone.current
+        
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
     func addFlight() {
         let fligh = Flight(name: simpleName,
                            dateOfVertification: simpleDate,

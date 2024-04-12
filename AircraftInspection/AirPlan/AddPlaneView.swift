@@ -39,10 +39,11 @@ struct AddPlaneView: View {
             .frame(height: 67)
             .background(Color.white)
             .cornerRadius(15)
-            .padding()
-            
+
             .navigationTitle(title)
-        }.onAppear(perform: {
+        }
+        .padding()
+        .onAppear(perform: {
             if title == "Edit" {
                 viewModel.fillChosePlane()
             }

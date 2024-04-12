@@ -15,13 +15,18 @@ struct AddFlightView: View {
     var body: some View {
         VStack {
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simpleName)
+            
             HStack{
                 Text("Check before")
                     .foregroundStyle(.gray)
                 Spacer()
-                TextFieldPlaneView(placeHolder: "", text: $viewModel.simpleDate)
+                TextField("", text: $viewModel.simpleDate)
+                    .padding(.horizontal, 5)
+                    .frame(width: 113, height: 40)
+                    .background(Color.cellBackground)
+                    .cornerRadius(10)
+                    .minimumScaleFactor(0.7)
             }
-            
             .padding()
             
             Spacer()
@@ -32,14 +37,13 @@ struct AddFlightView: View {
                 dismiss()
             }, label: {
                 Text("SAVE").foregroundStyle(.black)
-    
             })
             .frame(maxWidth: .infinity)
             .frame(height: 67)
             .background(Color.white)
             .cornerRadius(15)
-            .padding()
-        }
+            
+        }.padding()
     }
 }
 
