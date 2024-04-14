@@ -21,10 +21,12 @@ struct FlightChekingView: View {
             HStack{
                 Text("Date of vertification").foregroundStyle(.gray)
                 Spacer()
-                TextField(viewModel.chooseFlight.dateOfVertification, text: $viewModel.simpleDate)
-                    .frame(width: 125, height: 47)
-                    .background(Color(.cellBackground))
+                TextField("", text: $viewModel.simpleDate)
+                    .padding()
+                    .frame(width: 113, height: 40)
+                    .background(Color.cellBackground)
                     .cornerRadius(10)
+                    .minimumScaleFactor(0.7)
             }
             Rectangle()
                 .frame(width: 357, height: 1)

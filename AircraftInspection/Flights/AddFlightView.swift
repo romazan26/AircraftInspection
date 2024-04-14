@@ -21,13 +21,13 @@ struct AddFlightView: View {
                     .foregroundStyle(.gray)
                 Spacer()
                 TextField("", text: $viewModel.simpleDate)
-                    .padding(.horizontal, 5)
+                    .padding()
                     .frame(width: 113, height: 40)
                     .background(Color.cellBackground)
                     .cornerRadius(10)
                     .minimumScaleFactor(0.7)
             }
-            .padding()
+            .padding(.vertical)
             
             Spacer()
             

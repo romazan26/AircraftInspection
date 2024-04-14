@@ -13,7 +13,7 @@ final class FlightViewModel: ObservableObject {
     
     @Published var chooseFlight: Flight!
     @Published var simpleName = ""
-    @Published var simpleDate =  Date.now.formatted(date: .long, time: .shortened)
+    @Published var simpleDate =  "19 Jun 2024"
     @Published var simpleSystemAndComponents = false
     @Published var simpleElectronicsAndAvionics = false
     @Published var simpleIdentificationAndCertification = false
