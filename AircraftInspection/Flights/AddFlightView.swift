@@ -11,10 +11,12 @@ struct AddFlightView: View {
     
     @ObservedObject var viewModel: FlightViewModel
     @Environment(\.dismiss) var dismiss
+    @FocusState private var keyboardIsFocused: Bool
     
     var body: some View {
         VStack {
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simpleName)
+                .focused($keyboardIsFocused)
             
             HStack{
                 Text("Check before")
@@ -26,6 +28,7 @@ struct AddFlightView: View {
                     .background(Color.cellBackground)
                     .cornerRadius(10)
                     .minimumScaleFactor(0.7)
+                    .focused($keyboardIsFocused)
             }
             .padding(.vertical)
             
@@ -43,7 +46,11 @@ struct AddFlightView: View {
             .background(Color.white)
             .cornerRadius(15)
             
-        }.padding()
+        }
+        .onTapGesture {
+            keyboardIsFocused = false
+        }
+        .padding()
     }
 }
 

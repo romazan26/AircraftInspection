@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AddPlaneView: View {
+    
     @ObservedObject var viewModel: AirplaneviewModel
     @Environment(\.dismiss) var dismiss
+    @FocusState private var keyboardIsFocused: Bool
     
     var title = ""
     
@@ -17,10 +19,15 @@ struct AddPlaneView: View {
     var body: some View {
         VStack {
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simpleName)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Model", text: $viewModel.simpleModel)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Serial number", text: $viewModel.simpleSerialNumber)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Last inspection", text: $viewModel.simpleLastInspection)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Upcoming inspection", text: $viewModel.simpleUpcomingInspection)
+                .focused($keyboardIsFocused)
             Spacer()
             
             //MARK: - Save Button
@@ -33,14 +40,17 @@ struct AddPlaneView: View {
                 dismiss()
             }, label: {
                 Text("SAVE").foregroundStyle(.black)
-    
+                
             })
             .frame(maxWidth: .infinity)
             .frame(height: 67)
             .background(Color.white)
             .cornerRadius(15)
-
+            
             .navigationTitle(title)
+        }
+        .onTapGesture {
+            keyboardIsFocused = false
         }
         .padding()
         .onAppear(perform: {

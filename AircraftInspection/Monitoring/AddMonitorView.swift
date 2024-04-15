@@ -11,6 +11,8 @@ struct AddMonitorView: View {
     
     @ObservedObject var viewModel: MonitoringViewModel
     @Environment(\.dismiss) var dismiss
+    @FocusState private var keyboardIsFocused: Bool
+    
     var title = ""
     
     var body: some View {
@@ -18,10 +20,15 @@ struct AddMonitorView: View {
             
             //MARK: - TextField Group
             TextFieldPlaneView(placeHolder: "Name", text: $viewModel.simplename)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Weight", text: $viewModel.simpleweight)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Air Pressure", text: $viewModel.simpleairPressure)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "fuel Consumption", text: $viewModel.simplefuelConsumption)
+                .focused($keyboardIsFocused)
             TextFieldPlaneView(placeHolder: "Temperature", text: $viewModel.simpleengineTemperature)
+                .focused($keyboardIsFocused)
             HStack(spacing: 25){
                 Text("Balance")
                     .minimumScaleFactor(0.5)
@@ -37,7 +44,7 @@ struct AddMonitorView: View {
             
             //MARK: - Save Button
             Button(action: {
-                    viewModel.addmonitor()
+                viewModel.addmonitor()
                 dismiss()
             }, label: {
                 Text("SAVE").foregroundStyle(.black)
@@ -47,7 +54,11 @@ struct AddMonitorView: View {
             .background(Color.white)
             .cornerRadius(15)
             .navigationTitle(title)
-        }.padding()
+        }
+        .onTapGesture {
+            keyboardIsFocused = false
+        }
+        .padding()
     }
 }
 

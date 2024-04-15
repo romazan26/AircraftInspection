@@ -11,6 +11,7 @@ struct FlightChekingView: View {
     
     @ObservedObject var viewModel: FlightViewModel
     @Environment(\.dismiss) var dismiss
+    @FocusState private var keyboardIsFocused: Bool
     
     
     var body: some View {
@@ -27,6 +28,7 @@ struct FlightChekingView: View {
                     .background(Color.cellBackground)
                     .cornerRadius(10)
                     .minimumScaleFactor(0.7)
+                    .focused($keyboardIsFocused)
             }
             Rectangle()
                 .frame(width: 357, height: 1)
@@ -71,6 +73,7 @@ struct FlightChekingView: View {
             
             Spacer()
             TextFieldPlaneView(placeHolder: "Note", text: $viewModel.simleNote)
+                .focused($keyboardIsFocused)
             
             //MARK: - Save Button
             Button(action: {
@@ -85,6 +88,9 @@ struct FlightChekingView: View {
             .background(Color (viewModel.simpleDate.isEmpty ? .gray : .white))
             .cornerRadius(15)
             
+        }
+        .onTapGesture {
+            keyboardIsFocused = false
         }
         .onAppear(perform: {
             viewModel.fillChooseFlight()

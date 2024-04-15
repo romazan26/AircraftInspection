@@ -34,10 +34,12 @@ struct PlaneInfoView: View {
                 .onAppear(perform: {
                     viewModel.choosPlane = plane
                 })
-            TextPlaneView(placeHolder: "Model", text: plane.model)
-            TextPlaneView(placeHolder: "Serial number", text: plane.serialNumber)
-            TextPlaneView(placeHolder: "Last inspection", text: plane.lastInspection)
-            TextPlaneView(placeHolder: "Upcoming inspection", text: plane.upcominInspection)
+            ScrollView {
+                TextPlaneView(placeHolder: "Model", text: plane.model)
+                TextPlaneView(placeHolder: "Serial number", text: plane.serialNumber)
+                TextPlaneView(placeHolder: "Last inspection", text: plane.lastInspection)
+                TextPlaneView(placeHolder: "Upcoming inspection", text: plane.upcominInspection)
+            }
         }
         
         //MARK: - ALERT

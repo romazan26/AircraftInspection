@@ -10,6 +10,7 @@ import SwiftUI
 struct EditeMonitorView: View {
     
     @ObservedObject var viewModel: MonitoringViewModel
+    @FocusState private var keyboardIsFocused: Bool
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -17,6 +18,7 @@ struct EditeMonitorView: View {
             
             VStack{
                 TextFieldPlaneView(placeHolder: "Weight", text: $viewModel.simpleweight)
+                    .focused($keyboardIsFocused)
                 HStack(spacing: 25){
                     Text("Balance")
                     ButtonChooseView(action: {
@@ -27,13 +29,16 @@ struct EditeMonitorView: View {
                     }, choose: !viewModel.simplebalance, title: "Violated")
                 }
                 TextFieldPlaneView(placeHolder: "Engine temperature", text: $viewModel.simpleengineTemperature)
+                    .focused($keyboardIsFocused)
                 TextFieldPlaneView(placeHolder: "Air pressure", text: $viewModel.simpleairPressure)
+                    .focused($keyboardIsFocused)
                 TextFieldPlaneView(placeHolder: "Fuel consumption", text: $viewModel.simplefuelConsumption)
+                    .focused($keyboardIsFocused)
                 Spacer()
                 
                 //MARK: - Save Button
                 Button(action: {
-                        viewModel.replaceMonitor()
+                    viewModel.replaceMonitor()
                     dismiss()
                 }, label: {
                     Text("SAVE").foregroundStyle(.black)
@@ -48,6 +53,9 @@ struct EditeMonitorView: View {
                 viewModel.fillChooseMonitor()
             })
             .navigationTitle("Edite")
+        }
+        .onTapGesture {
+            keyboardIsFocused = false
         }
     }
 }

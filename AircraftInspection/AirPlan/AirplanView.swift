@@ -17,7 +17,7 @@ struct AirplanView: View {
             VStack {
                 HStack {
                     Spacer()
-                    Text("Arplain").font(.title).bold()
+                    Text("Arplaine").font(.title).bold()
                     Spacer()
                     Button {
                         showingConfirmation = true
@@ -72,6 +72,7 @@ struct AirplanView: View {
                 .presentationDetents([.medium])
         })
         .ignoresSafeArea()
+        
     }
 }
 
