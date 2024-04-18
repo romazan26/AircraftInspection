@@ -35,7 +35,7 @@ struct MonitorParametrsView: View {
                             .foregroundStyle(chooseMonitor.balance ? .green : .red)
                         .offset(x: 130)
                 }
-                TextPlaneView(placeHolder: "Engine temperature", text: String(chooseMonitor.engineTemperature) + " kg")
+                TextPlaneView(placeHolder: "Engine temperature", text: String(chooseMonitor.engineTemperature) + "°")
                 TextPlaneView(placeHolder: "Air pressure", text: String(chooseMonitor.airPressure) + " GPa")
                 TextPlaneView(placeHolder: "Fuel consumption", text: String(chooseMonitor.fuelConsumption) + " g/pass-km")
             }
