@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct LoadingView: View {
-    @State var percents: CGFloat = 0
+    @State var percents: Float = 0
     
     var body: some View {
-        ZStack{
-            Image(.imageLoading)
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
+            Image(.imageogo2)
                 .resizable()
-                .scaledToFill()
+                .frame(width: 314, height: 121)
+                .padding(.top, 121)
+             
+            Image(.imageogo)
+                .resizable()
+               
+                .frame(width: 431, height: 701)
+                .padding(.top, 201)
             VStack {
-                ProgressBarView(width: 330, height: 10, percents: percents)
+
+                ProgressBarCircle(progress: percents * 0.01)
                     .animation(.spring, value: percents)
-                
-                Text("\(Int(percents))%")
-                    .font(.title3)
-                    .bold()
+                    .frame(width: 98, height: 98)
             }
-            .padding()
-            .offset(y: 100)
+            .padding(.top, 670)
+            
         }
         .onAppear(perform: {
             Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
