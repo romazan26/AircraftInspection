@@ -10,7 +10,7 @@ import SwiftUI
 struct PlaneInfoView: View {
     
     @ObservedObject var viewModel: AirplaneviewModel
-    var plane: Plane
+    var plane: PlanesCD
     @State private var showAlert: Bool = false
     @Environment(\.dismiss) var dismiss
     
@@ -18,10 +18,10 @@ struct PlaneInfoView: View {
         VStack(alignment: .leading, spacing: 15) {
             Spacer()
             VStack {
-                Text(plane.name)
+                Text(plane.name ?? "")
                     .font(.largeTitle)
                     .bold()
-                Text(plane.model)
+                Text(plane.model ?? "")
                 Image(.airplane)
                     .resizable()
                     .frame(width: 300,height: 92)
@@ -35,20 +35,19 @@ struct PlaneInfoView: View {
                     viewModel.choosPlane = plane
                 })
             ScrollView {
-                TextPlaneView(placeHolder: "Model", text: plane.model)
-                TextPlaneView(placeHolder: "Serial number", text: plane.serialNumber)
-                TextPlaneView(placeHolder: "Last inspection", text: plane.lastInspection)
-                TextPlaneView(placeHolder: "Upcoming inspection", text: plane.upcominInspection)
+                TextPlaneView(placeHolder: "Model", text: plane.model ?? "")
+                TextPlaneView(placeHolder: "Serial number", text: plane.serialNumber ?? "")
+                TextPlaneView(placeHolder: "Last inspection", text: plane.lastInspection ?? "")
+                TextPlaneView(placeHolder: "Upcoming inspection", text: plane.upcominInspection ?? "")
             }
         }
-        
         //MARK: - ALERT
         .alert(isPresented: $showAlert, content: {
             Alert(title: Text("Deletion"),
                   message: Text("Do you really want to delete it?"),
                   primaryButton: .cancel(Text("No")),
                   secondaryButton: .destructive(Text("Yes"), action: {
-                viewModel.deletePlane(planeId: plane.id)
+                viewModel.deletePlane(plane: plane)
                 dismiss()
             }))
         })
@@ -61,6 +60,9 @@ struct PlaneInfoView: View {
                         AddPlaneView(viewModel: viewModel, title: "Edit")
                     } label: {
                         Image(systemName: "pencil")
+                            .onAppear {
+                                viewModel.choosPlane = plane
+                            }
                     }
                     
                     Button(action: {
@@ -74,6 +76,6 @@ struct PlaneInfoView: View {
     }
 }
 
-#Preview {
-    PlaneInfoView(viewModel: AirplaneviewModel(), plane: DataManager.shared.createTempData()[0])
-}
+//#Preview {
+//    PlaneInfoView(viewModel: AirplaneviewModel(), plane: DataManager.shared.createTempData()[0])
+//}

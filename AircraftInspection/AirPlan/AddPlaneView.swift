@@ -49,6 +49,7 @@ struct AddPlaneView: View {
             
             .navigationTitle(title)
         }
+        
         .onTapGesture {
             keyboardIsFocused = false
         }
@@ -61,6 +62,6 @@ struct AddPlaneView: View {
     }
 }
 
-#Preview {
-    AddPlaneView(viewModel: AirplaneviewModel())
-}
+//#Preview {
+//    AddPlaneView(viewModel: AirplaneviewModel())
+//}

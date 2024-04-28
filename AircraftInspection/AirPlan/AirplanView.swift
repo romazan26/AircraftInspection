@@ -48,10 +48,7 @@ struct AirplanView: View {
                     .frame(width: 393, height: 338)
                     .cornerRadius(10)
             }
-            
-            
-            
-            
+           
             //MARK: - Planes
             VStack(alignment: .leading) {
                 Text("Your planes")
@@ -66,13 +63,11 @@ struct AirplanView: View {
                 }
             }
         }
-        
         .sheet(isPresented: $showingConfirmation, content: {
             SettingsView()
                 .presentationDetents([.medium])
         })
         .ignoresSafeArea()
-        
     }
 }
 

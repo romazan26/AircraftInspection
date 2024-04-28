@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AirplaneCellView: View {
-    let airplane: Plane
+    let airplane: PlanesCD
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
@@ -24,11 +24,11 @@ struct AirplaneCellView: View {
                     .foregroundStyle(.gray)
                 
                 VStack(alignment: .leading) {
-                    Text(airplane.name)
+                    Text(airplane.name ?? "")
                         .font(.title)
                         .bold()
                         .foregroundStyle(.white)
-                    Text(airplane.model).foregroundStyle(.gray)
+                    Text(airplane.model ?? "").foregroundStyle(.gray)
                 }
                 Spacer()
                 ZStack {
@@ -45,6 +45,6 @@ struct AirplaneCellView: View {
     }
 }
 
-#Preview {
-    AirplaneCellView(airplane: DataManager.shared.createTempData()[0])
-}
+//#Preview {
+//    AirplaneCellView()
+//}

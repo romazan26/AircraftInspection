@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		304C49DB2BC70B4A0072685B /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304C49DA2BC70B4A0072685B /* webView.swift */; };
 		304C49DE2BC7157E0072685B /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304C49DD2BC7157E0072685B /* WebViewPage.swift */; };
+		305A33D82BDE6DC900E364B4 /* Aircraft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 305A33D62BDE6DC900E364B4 /* Aircraft.xcdatamodeld */; };
 		306C59042BD2ADEB00336BEC /* ProgressBarCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C59032BD2ADEB00336BEC /* ProgressBarCircle.swift */; };
 		309F44242BB744DA008D3A29 /* AircraftInspectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44232BB744DA008D3A29 /* AircraftInspectionApp.swift */; };
 		309F44262BB744DA008D3A29 /* TabViewBoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44252BB744DA008D3A29 /* TabViewBoot.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		304C49DA2BC70B4A0072685B /* webView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
 		304C49DD2BC7157E0072685B /* WebViewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
+		305A33D72BDE6DC900E364B4 /* Aircraft.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aircraft.xcdatamodel; sourceTree = "<group>"; };
 		306C59032BD2ADEB00336BEC /* ProgressBarCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarCircle.swift; sourceTree = "<group>"; };
 		309F44202BB744DA008D3A29 /* AircraftInspection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AircraftInspection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309F44232BB744DA008D3A29 /* AircraftInspectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AircraftInspectionApp.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				309F44272BB744DC008D3A29 /* Assets.xcassets */,
 				309F44292BB744DC008D3A29 /* Preview Content */,
 				309F44402BB74F45008D3A29 /* DataManager.swift */,
+				305A33D62BDE6DC900E364B4 /* Aircraft.xcdatamodeld */,
 			);
 			path = AircraftInspection;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */,
 				306C59042BD2ADEB00336BEC /* ProgressBarCircle.swift in Sources */,
 				30FC8CE72BC01FD8003287D2 /* AnalyticInfoView.swift in Sources */,
+				305A33D82BDE6DC900E364B4 /* Aircraft.xcdatamodeld in Sources */,
 				30FF26192BBBE182002216E8 /* AddPlaneView.swift in Sources */,
 				30FF261F2BBBF640002216E8 /* TextPlaneView.swift in Sources */,
 				309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */,
@@ -544,6 +548,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		305A33D62BDE6DC900E364B4 /* Aircraft.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				305A33D72BDE6DC900E364B4 /* Aircraft.xcdatamodel */,
+			);
+			currentVersion = 305A33D72BDE6DC900E364B4 /* Aircraft.xcdatamodel */;
+			path = Aircraft.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 309F44182BB744D9008D3A29 /* Project object */;
 }

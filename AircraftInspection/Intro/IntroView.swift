@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroView: View {
+    
     @AppStorage("isFirstStart") var isFirstStart: Bool?
     @State private var isPresented = false
     @State private var pageIndex = 0
