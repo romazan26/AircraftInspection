@@ -65,12 +65,7 @@ final class AirplaneviewModel: ObservableObject {
         newPlane.upcominInspection = simpleUpcomingInspection
         
         saveDate()
-        
-        simpleName = ""
-        simpleModel = ""
-        simpleSerialNumber = ""
-        simpleLastInspection = ""
-        simpleUpcomingInspection = ""
+        clear()
     }
     //MARK: - DELETE
     func deletePlane(plane: PlanesCD) {
@@ -86,6 +81,7 @@ final class AirplaneviewModel: ObservableObject {
         simpleUpcomingInspection = choosPlane.upcominInspection ?? ""
     }
     
+    //MARK: - Replace
     func replaceInfoPlane(){
         
         let request = NSFetchRequest<PlanesCD>(entityName: "PlanesCD")
@@ -102,5 +98,14 @@ final class AirplaneviewModel: ObservableObject {
         } catch let error {
             print("Error fetching \(error)")
         }
+        clear()
+    }
+    
+    private func clear(){
+        simpleName = ""
+        simpleModel = ""
+        simpleSerialNumber = ""
+        simpleLastInspection = ""
+        simpleUpcomingInspection = ""
     }
 }

@@ -25,7 +25,7 @@ struct MonitorCellView: View {
                     .frame(width: 1, height: 41)
                     .foregroundStyle(.gray)
                 
-                    Text(monitor.name)
+                Text(monitor.name ?? "")
                         .font(.title)
                         .bold()
                         .foregroundStyle(.white)
@@ -44,6 +44,6 @@ struct MonitorCellView: View {
     }
 }
 
-#Preview {
-    MonitorCellView(monitor: DataManager.shared.createTempDataMonitor()[0])
-}
+//#Preview {
+//    MonitorCellView()
+//}

@@ -18,7 +18,7 @@ struct MonitorParametrsView: View {
         VStack(spacing: 20){
             
             VStack {
-                Text(chooseMonitor.name).font(.largeTitle).bold()
+                Text(chooseMonitor.name ?? "").font(.largeTitle).bold()
                 Text("Plane parameters")
             }.padding(.top, -80)
             
@@ -49,7 +49,7 @@ struct MonitorParametrsView: View {
                   message: Text("Do you really want to delete it?"),
                   primaryButton: .cancel(Text("No")),
                   secondaryButton: .destructive(Text("Yes"), action: {
-                viewModel.deleteMonitor()
+                viewModel.deleteMonitor(monitor: chooseMonitor)
                 dismiss()
             }))
         })
@@ -74,6 +74,6 @@ struct MonitorParametrsView: View {
     }
 }
 
-#Preview {
-    MonitorParametrsView(viewModel: MonitoringViewModel(), chooseMonitor: DataManager.shared.createTempDataMonitor()[0])
-}
+//#Preview {
+//    MonitorParametrsView()
+//}
