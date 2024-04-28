@@ -9,7 +9,7 @@ import Foundation
 
 final class MonitoringViewModel: ObservableObject {
     
-    @Published var monitors: [Monitoring] = DataManager.shared.createTempDataMonitor()
+    @Published var monitors: [Monitoring] = []
     @Published var chooseMonitor: Monitoring!
     
     @Published var simplename = ""

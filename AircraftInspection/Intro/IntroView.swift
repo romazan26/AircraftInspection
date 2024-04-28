@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct IntroView: View {
+    @AppStorage("isFirstStart") var isFirstStart: Bool?
     @State private var isPresented = false
     @State private var pageIndex = 0
     @Environment(\.dismiss) var dismiss
@@ -35,6 +36,7 @@ struct IntroView: View {
                                             Spacer()
                                             Button {
                                                 isPresented = true
+                                                isFirstStart = true
                                                 dismiss()
                                             } label: {
                                                

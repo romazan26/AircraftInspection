@@ -9,7 +9,7 @@ import Foundation
 
 final class AirplaneviewModel: ObservableObject {
     
-    @Published var planes: [Plane] = DataManager.shared.createTempData()
+    @Published var planes: [Plane] = []
     @Published var choosPlane: Plane!
     
     @Published var simpleName = ""

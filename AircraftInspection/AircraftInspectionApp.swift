@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct AircraftInspectionApp: App {
+    
+    @AppStorage("isFirstStart") var isFirstStart: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            IntroView().preferredColorScheme(.dark)
+            if isFirstStart {
+                TabViewBoot().preferredColorScheme(.dark)
+            }else {
+                IntroView().preferredColorScheme(.dark)
+            }
+            
         }
     }
 }

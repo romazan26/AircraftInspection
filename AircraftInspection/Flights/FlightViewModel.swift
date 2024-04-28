@@ -9,7 +9,7 @@ import Foundation
 
 final class FlightViewModel: ObservableObject {
     
-    @Published var flights: [Flight] = DataManager.shared.createTempDataFlight()
+    @Published var flights: [Flight] = []
     
     @Published var chooseFlight: Flight!
     @Published var simpleName = ""
