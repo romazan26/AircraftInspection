@@ -62,10 +62,10 @@ struct SettingsView: View {
             Spacer()
         }
         .sheet(isPresented: $isPresentPolicy, content: {
-            WebViewPage(urlString: URL(string: "https://www.apple.com")!)
+            WebViewPage(urlString: URL(string: "https://doc-hosting.flycricket.io/skyguardiantech-app-privacy-policy/dd2d149e-c620-43a5-9720-6afbbfcdfe63/privacy")!)
         })
         .sheet(isPresented: $isPresentSupport, content: {
-            WebViewPage(urlString: URL(string: "https://www.google.com")!)
+            WebViewPage(urlString: URL(string: "https://telegra.ph/Support-04-19-10")!)
         })
         .padding()
     }
