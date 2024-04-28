@@ -19,8 +19,6 @@
 		309F44362BB7464C008D3A29 /* MonitoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44352BB7464C008D3A29 /* MonitoringView.swift */; };
 		309F44392BB7466C008D3A29 /* FligtsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44382BB7466C008D3A29 /* FligtsView.swift */; };
 		309F443C2BB746DA008D3A29 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F443B2BB746DA008D3A29 /* AnalyticsView.swift */; };
-		309F443F2BB74C43008D3A29 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F443E2BB74C43008D3A29 /* Plane.swift */; };
-		309F44412BB74F45008D3A29 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44402BB74F45008D3A29 /* DataManager.swift */; };
 		309F44432BB750D4008D3A29 /* AirplaneviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */; };
 		309F44462BB75881008D3A29 /* ButtonCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309F44452BB75881008D3A29 /* ButtonCircle.swift */; };
 		30F488E12BC5BF21003F2F32 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F488E02BC5BF21003F2F32 /* SettingsView.swift */; };
@@ -62,8 +60,6 @@
 		309F44352BB7464C008D3A29 /* MonitoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringView.swift; sourceTree = "<group>"; };
 		309F44382BB7466C008D3A29 /* FligtsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FligtsView.swift; sourceTree = "<group>"; };
 		309F443B2BB746DA008D3A29 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
-		309F443E2BB74C43008D3A29 /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
-		309F44402BB74F45008D3A29 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		309F44422BB750D4008D3A29 /* AirplaneviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneviewModel.swift; sourceTree = "<group>"; };
 		309F44452BB75881008D3A29 /* ButtonCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCircle.swift; sourceTree = "<group>"; };
 		30F488E02BC5BF21003F2F32 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -133,7 +129,6 @@
 				304C49DC2BC7155E0072685B /* WebView */,
 				30FC8CE82BC06829003287D2 /* Intro */,
 				309F44442BB75858008D3A29 /* Extentions */,
-				309F443D2BB74C2C008D3A29 /* Model */,
 				309F443A2BB746B8008D3A29 /* Analytics */,
 				309F44372BB74652008D3A29 /* Flights */,
 				309F44342BB74623008D3A29 /* Monitoring */,
@@ -142,7 +137,6 @@
 				309F44252BB744DA008D3A29 /* TabViewBoot.swift */,
 				309F44272BB744DC008D3A29 /* Assets.xcassets */,
 				309F44292BB744DC008D3A29 /* Preview Content */,
-				309F44402BB74F45008D3A29 /* DataManager.swift */,
 				305A33D62BDE6DC900E364B4 /* Aircraft.xcdatamodeld */,
 			);
 			path = AircraftInspection;
@@ -197,14 +191,6 @@
 				30FC8CE62BC01FD8003287D2 /* AnalyticInfoView.swift */,
 			);
 			path = Analytics;
-			sourceTree = "<group>";
-		};
-		309F443D2BB74C2C008D3A29 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				309F443E2BB74C43008D3A29 /* Plane.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		309F44442BB75858008D3A29 /* Extentions */ = {
@@ -308,7 +294,6 @@
 			files = (
 				30FF262D2BBDE7A3002216E8 /* EditeMonitorView.swift in Sources */,
 				309F44392BB7466C008D3A29 /* FligtsView.swift in Sources */,
-				309F44412BB74F45008D3A29 /* DataManager.swift in Sources */,
 				309F44362BB7464C008D3A29 /* MonitoringView.swift in Sources */,
 				30FF26232BBC8A17002216E8 /* MonitorCellView.swift in Sources */,
 				30FC8CF22BC094D7003287D2 /* LoadingView.swift in Sources */,
@@ -342,7 +327,6 @@
 				309F44242BB744DA008D3A29 /* AircraftInspectionApp.swift in Sources */,
 				30FF261B2BBBE40A002216E8 /* TextFieldPlaneView.swift in Sources */,
 				30FC8CDD2BBF2754003287D2 /* FlightCellView.swift in Sources */,
-				309F443F2BB74C43008D3A29 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

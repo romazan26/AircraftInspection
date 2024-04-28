@@ -20,9 +20,9 @@ struct FlightCellView: View {
                 .foregroundStyle(.cellBackground)
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Check before \(flight.dateOfVertification)")
+                    Text("Check before \(flight.dateOfVertification ?? "")")
                         .foregroundStyle(.gray)
-                    Text(flight.name)
+                    Text(flight.name ?? "")
                         .font(.title2)
                         .bold()
                 }
@@ -56,6 +56,6 @@ struct FlightCellView: View {
     }
 }
 
-#Preview {
-    FlightCellView(viewModel: FlightViewModel(), flight: DataManager.shared.createTempDataFlight()[0])
-}
+//#Preview {
+//    FlightCellView()
+//}

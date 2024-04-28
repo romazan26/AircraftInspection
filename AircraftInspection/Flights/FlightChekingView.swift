@@ -16,7 +16,7 @@ struct FlightChekingView: View {
     
     var body: some View {
         VStack{
-            Text(viewModel.chooseFlight.name)
+            Text(viewModel.chooseFlight.name ?? "")
                 .font(.largeTitle)
                 .bold()
             HStack{

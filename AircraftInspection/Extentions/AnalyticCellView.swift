@@ -15,8 +15,8 @@ struct AnalyticCellView: View {
                 .frame(width: 370, height: 89)
                 .foregroundStyle(.cellBackground)
             VStack(alignment: .leading, spacing: 10) {
-                Text("Report from the \(flight.dateOfVertification)")
-                Text(flight.name)
+                Text("Report from the \(flight.dateOfVertification ?? "")")
+                Text(flight.name ?? "")
                     .font(.title)
                     .bold()
                     .foregroundStyle(.white)
@@ -25,6 +25,6 @@ struct AnalyticCellView: View {
     }
 }
 
-#Preview {
-    AnalyticCellView(flight: DataManager.shared.createTempDataFlight()[0])
-}
+//#Preview {
+//    AnalyticCellView()
+//}
