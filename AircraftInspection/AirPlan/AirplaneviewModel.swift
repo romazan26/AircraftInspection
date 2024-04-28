@@ -87,18 +87,20 @@ final class AirplaneviewModel: ObservableObject {
     }
     
     func replaceInfoPlane(){
-        var index = 0
-        for plane in planes {
-            if plane.id == choosPlane.id{
-                planes[index].name = simpleName
-                planes[index].model = simpleModel
-                planes[index].serialNumber = simpleSerialNumber
-                planes[index].lastInspection = simpleLastInspection
-                planes[index].upcominInspection = simpleUpcomingInspection
-                saveDate()
-            }
-            index += 1
-        }
         
+        let request = NSFetchRequest<PlanesCD>(entityName: "PlanesCD")
+        
+        do {
+            planes = try container.viewContext.fetch(request)
+            let plane = planes.first(where: {$0.id == choosPlane.id})
+            plane?.name = simpleName
+            plane?.model = simpleModel
+            plane?.serialNumber = simpleSerialNumber
+            plane?.lastInspection = simpleLastInspection
+            plane?.upcominInspection = simpleUpcomingInspection
+            saveDate()
+        } catch let error {
+            print("Error fetching \(error)")
+        }
     }
 }
