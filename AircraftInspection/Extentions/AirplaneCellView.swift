@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AirplaneCellView: View {
-    let airplane: PlanesCD
+    @ObservedObject var airplane: PlanesCD
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)

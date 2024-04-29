@@ -39,7 +39,6 @@ final class AirplaneviewModel: ObservableObject {
         
         do {
             planes = try container.viewContext.fetch(request)
-            print("Fetch date")
         } catch let error {
             print("Error fetching \(error)")
         }

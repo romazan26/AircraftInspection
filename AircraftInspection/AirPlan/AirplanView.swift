@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AirplanView: View {
-    @ObservedObject var viewModel = AirplaneviewModel()
+    @ObservedObject var viewModel: AirplaneviewModel
     @State private var showingConfirmation = false
     var body: some View {
         VStack(spacing: 15) {
