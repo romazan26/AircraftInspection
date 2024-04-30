@@ -63,5 +63,5 @@ struct AddMonitorView: View {
 }
 
 #Preview {
-    AddMonitorView(viewModel: MonitoringViewModel(), title: "Add plane")
+    AddMonitorView(viewModel: MonitoringViewModel(chooseMonitor: Monitoring()), title: "Add plane")
 }

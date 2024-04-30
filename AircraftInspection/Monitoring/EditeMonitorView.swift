@@ -39,6 +39,7 @@ struct EditeMonitorView: View {
                 //MARK: - Save Button
                 Button(action: {
                     viewModel.replaceMonitor()
+                    
                     dismiss()
                 }, label: {
                     Text("SAVE").foregroundStyle(.black)
@@ -61,5 +62,6 @@ struct EditeMonitorView: View {
 }
 
 #Preview {
-    EditeMonitorView(viewModel: MonitoringViewModel())
+
+    EditeMonitorView(viewModel: MonitoringViewModel(chooseMonitor: Monitoring()))
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MonitoringView: View {
     
-    @ObservedObject var viewModel = MonitoringViewModel()
+    @ObservedObject var viewModel = MonitoringViewModel(chooseMonitor: Monitoring())
     @State private var showingConfirmation = false
     
     var body: some View {
@@ -62,7 +62,7 @@ struct MonitoringView: View {
                     .padding(.top, 20)
                 ScrollView {
                     ForEach(viewModel.monitors) { monitor in
-                        NavigationLink(destination: MonitorParametrsView(viewModel: viewModel, chooseMonitor: monitor)) {
+                        NavigationLink(destination: MonitorParametrsView(viewModel: MonitoringViewModel(chooseMonitor: monitor))) {
                             MonitorCellView(monitor: monitor)
 
                         }
@@ -74,6 +74,7 @@ struct MonitoringView: View {
             SettingsView()
                 .presentationDetents([.medium])
         })
+        
         .ignoresSafeArea()
     }
 }

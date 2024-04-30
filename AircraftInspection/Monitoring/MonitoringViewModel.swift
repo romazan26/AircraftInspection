@@ -7,11 +7,12 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 final class MonitoringViewModel: ObservableObject {
     
     @Published var monitors: [Monitoring] = []
-    @Published var chooseMonitor: Monitoring!
+    @Published var chooseMonitor: Monitoring
     
     @Published var simplename = ""
     @Published var simpleweight = ""
@@ -20,10 +21,15 @@ final class MonitoringViewModel: ObservableObject {
     @Published var simplefuelConsumption = ""
     @Published var simplebalance = false
     
+    @Published var isEdite = false
+    
     //MARK: - CoreData
     let container = NSPersistentContainer(name: "Aircraft")
     
-    init() {
+    init(chooseMonitor: Monitoring) {
+        
+        self.chooseMonitor = chooseMonitor
+        
         container.loadPersistentStores { descriptoin , error in
             if let error = error {
                 print("Core data failed to load: \(error.localizedDescription)")
@@ -61,10 +67,10 @@ final class MonitoringViewModel: ObservableObject {
         let newMonitor = Monitoring(context: container.viewContext)
         newMonitor.id = UUID()
         newMonitor.name = simplename
-        newMonitor.weight = Int16(simpleweight) ?? 0
-        newMonitor.engineTemperature = Int16(simpleengineTemperature) ?? 0
+        newMonitor.weight = Int64(simpleweight) ?? 0
+        newMonitor.engineTemperature = Int64(simpleengineTemperature) ?? 0
         newMonitor.fuelConsumption = Float(simplefuelConsumption) ?? 0
-        newMonitor.airPressure = Int16(simpleairPressure) ?? 0
+        newMonitor.airPressure = Int64(simpleairPressure) ?? 0
         newMonitor.balance = simplebalance
         saveDate()
         clear()
@@ -85,17 +91,21 @@ final class MonitoringViewModel: ObservableObject {
         for monitor in monitors {
             if monitor.id == chooseMonitor.id{
                 monitors[index].name = simplename
-                monitors[index].weight = Int16(Int(simpleweight) ?? 0)
-                monitors[index].airPressure = Int16(Int(simpleairPressure) ?? 0)
-                monitors[index].engineTemperature = Int16(Int(simpleengineTemperature) ?? 0)
+                monitors[index].weight = Int64(Int(simpleweight) ?? 0)
+                monitors[index].airPressure = Int64(Int(simpleairPressure) ?? 0)
+                monitors[index].engineTemperature = Int64(Int(simpleengineTemperature) ?? 0)
                 monitors[index].fuelConsumption = Float(simplefuelConsumption) ?? 0
                 monitors[index].balance = simplebalance
+                chooseMonitor = monitors[index]
                 saveDate()
+                print("replace:")
             }
             index += 1
         }
-        clear()
+        isEdite = true
+       // clear()
     }
+    
     private func clear() {
         simplename = ""
         simpleweight = ""

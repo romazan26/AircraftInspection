@@ -10,7 +10,7 @@ import SwiftUI
 struct TextPlaneView: View {
     
     @State var placeHolder: String
-    @State var text: String
+    var text: String
     
     var body: some View {
   

@@ -10,7 +10,7 @@ import SwiftUI
 struct MonitorParametrsView: View {
     
     @ObservedObject var viewModel: MonitoringViewModel
-    var chooseMonitor: Monitoring
+   
     @State private var showAlert: Bool = false
     @Environment(\.dismiss) var dismiss
     
@@ -18,38 +18,39 @@ struct MonitorParametrsView: View {
         VStack(spacing: 20){
             
             VStack {
-                Text(chooseMonitor.name ?? "").font(.largeTitle).bold()
+                Text(viewModel.chooseMonitor.name ?? "").font(.largeTitle).bold()
                 Text("Plane parameters")
             }.padding(.top, -80)
             
             
             VStack{
-                TextPlaneView(placeHolder: "Weight", text: String(chooseMonitor.weight) + " kg")
+                TextPlaneView(placeHolder: "Weight", text: String(viewModel.chooseMonitor.weight) + " kg")
+                    .onAppear(perform: {
+                        print(viewModel.simpleweight)
+                    })
                 ZStack {
-                    TextPlaneView(placeHolder: "Balance", text: String(chooseMonitor.balance ? "Good" : "Violated"))
-                        .foregroundStyle(chooseMonitor.balance ? .green : .red)
+                    TextPlaneView(placeHolder: "Balance", text: String(viewModel.chooseMonitor.balance ? "Good" : "Violated"))
+                        .foregroundStyle(viewModel.chooseMonitor.balance ? .green : .red)
                    
-                        Image(systemName: chooseMonitor.balance ? "checkmark.circle.fill" : "xmark.circle.fill")
+                    Image(systemName: viewModel.chooseMonitor.balance ? "checkmark.circle.fill" : "xmark.circle.fill")
                             .resizable()
                             .frame(width: 26, height: 26)
-                            .foregroundStyle(chooseMonitor.balance ? .green : .red)
+                            .foregroundStyle(viewModel.chooseMonitor.balance ? .green : .red)
                         .offset(x: 130)
                 }
-                TextPlaneView(placeHolder: "Engine temperature", text: String(chooseMonitor.engineTemperature) + "°")
-                TextPlaneView(placeHolder: "Air pressure", text: String(chooseMonitor.airPressure) + " GPa")
-                TextPlaneView(placeHolder: "Fuel consumption", text: String(chooseMonitor.fuelConsumption) + " g/pass-km")
+                TextPlaneView(placeHolder: "Engine temperature", text: String(viewModel.chooseMonitor.engineTemperature) + "°")
+                TextPlaneView(placeHolder: "Air pressure", text: String(viewModel.chooseMonitor.airPressure) + " GPa")
+                TextPlaneView(placeHolder: "Fuel consumption", text: String(viewModel.chooseMonitor.fuelConsumption) + " g/pass-km")
             }
         }
-        .onAppear(perform: {
-            viewModel.chooseMonitor = chooseMonitor
-        })
+       
         //MARK: - ALERT
         .alert(isPresented: $showAlert, content: {
             Alert(title: Text("Deletion"),
                   message: Text("Do you really want to delete it?"),
                   primaryButton: .cancel(Text("No")),
                   secondaryButton: .destructive(Text("Yes"), action: {
-                viewModel.deleteMonitor(monitor: chooseMonitor)
+                viewModel.deleteMonitor(monitor: viewModel.chooseMonitor)
                 dismiss()
             }))
         })
@@ -71,6 +72,7 @@ struct MonitorParametrsView: View {
                 }
             }
         })
+        
     }
 }
 
