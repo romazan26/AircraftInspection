@@ -27,6 +27,8 @@ struct EditeMonitorView: View {
                     ButtonChooseView(action: {
                         viewModel.simplebalance = false
                     }, choose: !viewModel.simplebalance, title: "Violated")
+                }.onTapGesture {
+                    keyboardIsFocused = false
                 }
                 TextFieldPlaneView(placeHolder: "Engine temperature", text: $viewModel.simpleengineTemperature)
                     .focused($keyboardIsFocused)
@@ -55,9 +57,7 @@ struct EditeMonitorView: View {
             })
             .navigationTitle("Edite")
         }
-        .onTapGesture {
-            keyboardIsFocused = false
-        }
+        
     }
 }
 

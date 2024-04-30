@@ -50,9 +50,6 @@ struct AddPlaneView: View {
             .navigationTitle(title)
         }
         
-        .onTapGesture {
-            keyboardIsFocused = false
-        }
         .padding()
         .onAppear(perform: {
             if title == "Edit" {

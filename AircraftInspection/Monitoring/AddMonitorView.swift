@@ -55,9 +55,7 @@ struct AddMonitorView: View {
             .cornerRadius(15)
             .navigationTitle(title)
         }
-        .onTapGesture {
-            keyboardIsFocused = false
-        }
+        
         .padding()
     }
 }
