@@ -56,10 +56,12 @@ struct AnalyticsView: View {
             }.padding(.top, 90)
         }
         
-        .sheet(isPresented: $showingConfirmation, content: {
+        .halfSheet(showSheet: $showingConfirmation) {
             SettingsView()
-                .presentationDetents([.medium])
-        })
+        } onEnd: {
+            print("Dismoss")
+        }
+        
         .ignoresSafeArea()
     }
 }

@@ -70,10 +70,11 @@ struct MonitoringView: View {
                 }
             }
         }
-        .sheet(isPresented: $showingConfirmation, content: {
+        .halfSheet(showSheet: $showingConfirmation) {
             SettingsView()
-                .presentationDetents([.medium])
-        })
+        } onEnd: {
+            print("Dismoss")
+        }
         
         .ignoresSafeArea()
     }

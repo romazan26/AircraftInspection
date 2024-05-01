@@ -23,7 +23,7 @@ struct PageIntroView: View {
                     Text(page.name)
                         .foregroundStyle(.white)
                         .font(.title)
-                        .bold()
+                        .font(.system(.headline))
                         
                     Text(page.description)
                         .foregroundStyle(.gray)

@@ -63,14 +63,25 @@ struct AirplanView: View {
                 }
             }
         }
-        .sheet(isPresented: $showingConfirmation, content: {
+        .halfSheet(showSheet: $showingConfirmation) {
             SettingsView()
-                .presentationDetents([.medium])
-        })
+        } onEnd: {
+            print("Dismoss")
+        }
         .ignoresSafeArea()
     }
 }
 
+extension View {
+    func halfSheet<SheetView: View>(showSheet: Binding<Bool>,@ViewBuilder sheetView: @escaping ()->SheetView, onEnd: @escaping ()->())-> some View{
+        
+        
+        return self
+            .background {
+                HalfSheetHepler(showSheet: showSheet, sheetView: sheetView(), onEnd: onEnd)
+            }
+    }
+}
 #Preview {
     AirplanView(viewModel: AirplaneviewModel())
 }

@@ -37,7 +37,7 @@ struct AirplaneCellView: View {
                         .foregroundStyle(.white)
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.black)
-                        .bold()
+                        .font(.system(.headline))
                 }
             }
             

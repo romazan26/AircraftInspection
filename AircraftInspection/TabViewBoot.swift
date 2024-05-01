@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+
 struct TabViewBoot: View {
     
    
     @ObservedObject var flightViewModel = FlightViewModel()
     @ObservedObject var airplaneViewModel = AirplaneviewModel()
     var body: some View {
-        NavigationStack {
+        
+        
+        NavigationView {
             TabView {
                 
                 AirplanView(viewModel: airplaneViewModel).tabItem {Label("Airplan", systemImage: "airplane")}

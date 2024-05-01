@@ -42,7 +42,7 @@ struct FlightCellView: View {
                                 Text("Start checking")
                                     .foregroundStyle(.white)
                                     .font(.system(size: 13))
-                                    .bold()
+                                    .font(.system(.headline))
                             }
                         
                     }

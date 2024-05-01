@@ -18,7 +18,7 @@ struct TextFieldPlaneView: View {
                 .font(.callout)
                 .foregroundStyle(.gray)
             TextField("", text: $text)
-                .font(.title2).bold()
+                .font(.title2).font(.system(.headline))
         }
         .padding()
         .background(Color(.cellBackground))

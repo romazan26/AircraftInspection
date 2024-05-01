@@ -36,7 +36,7 @@ struct MonitorCellView: View {
                         .foregroundStyle(.white)
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.black)
-                        .bold()
+                        .font(.system(.headline))
                 }
             }
             
