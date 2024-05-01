@@ -14,6 +14,11 @@ struct SettingsView: View {
 
     @State private var isPresentPolicy = false
     @State private var isPresentSupport = false
+    @State private var isPresentShare = false
+    
+    @State var urlShare = "https://google.com"
+    
+    @State var items = [URL(string: "www.google.com")]
     
     var body: some View {
         ZStack {
@@ -38,9 +43,13 @@ struct SettingsView: View {
                 .padding()
                 
                 //MARK: - Share app
-    //            ShareLink(item: URL(string: "https://www.google.com/")!) {
-    //                SettingRow(name: "Share app", imageName: "square.and.arrow.up")
-    //            }
+                Button(action: {
+                    isPresentShare = true
+                }, label: {
+                    SettingRow(name: "Share app", imageName: "square.and.arrow.up")
+                })
+                    
+
                 
                 //MARK: - Usage Policy
                 Button(action: { isPresentPolicy = true}, label: {
@@ -49,7 +58,6 @@ struct SettingsView: View {
                 
                 //MARK: - Rate app
                 Button {
-                   // requestRewiew()
                     SKStoreReviewController.requestReview()
                 } label: {
                     SettingRow(name: "Rate app", imageName: "star")
@@ -67,6 +75,9 @@ struct SettingsView: View {
                 
                 Spacer()
             }
+            .sheet(isPresented: $isPresentShare, content: {
+                ShareSheet(items: urlShare )
+            })
             .sheet(isPresented: $isPresentPolicy, content: {
                 WebViewPage(urlString: URL(string: "https://doc-hosting.flycricket.io/skyguardiantech-app-privacy-policy/dd2d149e-c620-43a5-9720-6afbbfcdfe63/privacy")!)
             })
@@ -75,6 +86,7 @@ struct SettingsView: View {
             })
         .padding()
         }
+         
     }
         
 }
@@ -101,5 +113,19 @@ struct SettingRow: View {
                 Spacer()
             }.padding()
         }.frame(width: 335, height: 54)
+    }
+}
+
+struct ShareSheet: UIViewControllerRepresentable{
+    
+    var items: String
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        
+        let av = UIActivityViewController(activityItems: [items], applicationActivities: nil)
+        
+        return av
+    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
     }
 }
